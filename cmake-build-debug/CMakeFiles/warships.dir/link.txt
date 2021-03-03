@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/warships.dir/main.cpp.o CMakeFiles/warships.dir/board.cpp.o CMakeFiles/warships.dir/helper.cpp.o CMakeFiles/warships.dir/player.cpp.o CMakeFiles/warships.dir/configuration.cpp.o  -o warships 
