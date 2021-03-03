@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/warships.dir/board.cpp.o"
-  "CMakeFiles/warships.dir/configuration.cpp.o"
-  "CMakeFiles/warships.dir/helper.cpp.o"
+  "CMakeFiles/warships.dir/board/board.cpp.o"
+  "CMakeFiles/warships.dir/common/common.cpp.o"
+  "CMakeFiles/warships.dir/config/configuration.cpp.o"
   "CMakeFiles/warships.dir/main.cpp.o"
-  "CMakeFiles/warships.dir/player.cpp.o"
+  "CMakeFiles/warships.dir/player/player.cpp.o"
   "warships"
   "warships.pdb"
 )

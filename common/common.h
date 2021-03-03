@@ -9,7 +9,7 @@
 
 #endif //WARSHIPS_HELPER_H
 
-class helper {
+class common {
 public:
     static std::vector<std::string> split(std::string &str, const std::string& delim);
 };

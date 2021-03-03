@@ -5,7 +5,7 @@
 #ifndef WARSHIPS_PLAYER_H
 #define WARSHIPS_PLAYER_H
 
-#include "board.h"
+#include "../board/board.h"
 
 class player {
 private:

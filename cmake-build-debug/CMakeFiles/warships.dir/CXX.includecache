@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/vuhongann/CLionProjects/warships/board.cpp
-iostream
--
-board.h
-/Users/vuhongann/CLionProjects/warships/board.h
-mini/ini.h
-/Users/vuhongann/CLionProjects/warships/mini/ini.h
-helper.h
-/Users/vuhongann/CLionProjects/warships/helper.h
-
-/Users/vuhongann/CLionProjects/warships/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
 string
 -
 
-/Users/vuhongann/CLionProjects/warships/helper.h
+/Users/vuhongann/CLionProjects/warships/common/common.h
 vector
 -
+
+/Users/vuhongann/CLionProjects/warships/config/configuration.cpp
+iostream
+-
+configuration.h
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
+../mini/ini.h
+/Users/vuhongann/CLionProjects/warships/mini/ini.h
+../common/common.h
+/Users/vuhongann/CLionProjects/warships/common/common.h
+
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
+map
+-
+vector
+-
+../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
 
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
 string

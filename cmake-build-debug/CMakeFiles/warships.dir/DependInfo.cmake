@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/vuhongann/CLionProjects/warships/board.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/board.cpp.o"
-  "/Users/vuhongann/CLionProjects/warships/configuration.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/configuration.cpp.o"
-  "/Users/vuhongann/CLionProjects/warships/helper.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/helper.cpp.o"
+  "/Users/vuhongann/CLionProjects/warships/board/board.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/board/board.cpp.o"
+  "/Users/vuhongann/CLionProjects/warships/common/common.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/common/common.cpp.o"
+  "/Users/vuhongann/CLionProjects/warships/config/configuration.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/config/configuration.cpp.o"
   "/Users/vuhongann/CLionProjects/warships/main.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/main.cpp.o"
-  "/Users/vuhongann/CLionProjects/warships/player.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/player.cpp.o"
+  "/Users/vuhongann/CLionProjects/warships/player/player.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/player/player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -123,86 +123,86 @@ warships/fast:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/build
 .PHONY : warships/fast
 
-board.o: board.cpp.o
+board/board.o: board/board.cpp.o
 
-.PHONY : board.o
-
-# target to build an object file
-board.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board.cpp.o
-.PHONY : board.cpp.o
-
-board.i: board.cpp.i
-
-.PHONY : board.i
-
-# target to preprocess a source file
-board.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board.cpp.i
-.PHONY : board.cpp.i
-
-board.s: board.cpp.s
-
-.PHONY : board.s
-
-# target to generate assembly for a file
-board.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board.cpp.s
-.PHONY : board.cpp.s
-
-configuration.o: configuration.cpp.o
-
-.PHONY : configuration.o
+.PHONY : board/board.o
 
 # target to build an object file
-configuration.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.o
-.PHONY : configuration.cpp.o
+board/board.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board/board.cpp.o
+.PHONY : board/board.cpp.o
 
-configuration.i: configuration.cpp.i
+board/board.i: board/board.cpp.i
 
-.PHONY : configuration.i
+.PHONY : board/board.i
 
 # target to preprocess a source file
-configuration.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.i
-.PHONY : configuration.cpp.i
+board/board.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board/board.cpp.i
+.PHONY : board/board.cpp.i
 
-configuration.s: configuration.cpp.s
+board/board.s: board/board.cpp.s
 
-.PHONY : configuration.s
+.PHONY : board/board.s
 
 # target to generate assembly for a file
-configuration.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.s
-.PHONY : configuration.cpp.s
+board/board.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board/board.cpp.s
+.PHONY : board/board.cpp.s
 
-helper.o: helper.cpp.o
+common/common.o: common/common.cpp.o
 
-.PHONY : helper.o
+.PHONY : common/common.o
 
 # target to build an object file
-helper.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/helper.cpp.o
-.PHONY : helper.cpp.o
+common/common.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.o
+.PHONY : common/common.cpp.o
 
-helper.i: helper.cpp.i
+common/common.i: common/common.cpp.i
 
-.PHONY : helper.i
+.PHONY : common/common.i
 
 # target to preprocess a source file
-helper.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/helper.cpp.i
-.PHONY : helper.cpp.i
+common/common.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.i
+.PHONY : common/common.cpp.i
 
-helper.s: helper.cpp.s
+common/common.s: common/common.cpp.s
 
-.PHONY : helper.s
+.PHONY : common/common.s
 
 # target to generate assembly for a file
-helper.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/helper.cpp.s
-.PHONY : helper.cpp.s
+common/common.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.s
+.PHONY : common/common.cpp.s
+
+config/configuration.o: config/configuration.cpp.o
+
+.PHONY : config/configuration.o
+
+# target to build an object file
+config/configuration.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.o
+.PHONY : config/configuration.cpp.o
+
+config/configuration.i: config/configuration.cpp.i
+
+.PHONY : config/configuration.i
+
+# target to preprocess a source file
+config/configuration.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.i
+.PHONY : config/configuration.cpp.i
+
+config/configuration.s: config/configuration.cpp.s
+
+.PHONY : config/configuration.s
+
+# target to generate assembly for a file
+config/configuration.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.s
+.PHONY : config/configuration.cpp.s
 
 main.o: main.cpp.o
 
@@ -231,32 +231,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-player.o: player.cpp.o
+player/player.o: player/player.cpp.o
 
-.PHONY : player.o
+.PHONY : player/player.o
 
 # target to build an object file
-player.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player.cpp.o
-.PHONY : player.cpp.o
+player/player.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player/player.cpp.o
+.PHONY : player/player.cpp.o
 
-player.i: player.cpp.i
+player/player.i: player/player.cpp.i
 
-.PHONY : player.i
+.PHONY : player/player.i
 
 # target to preprocess a source file
-player.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player.cpp.i
-.PHONY : player.cpp.i
+player/player.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player/player.cpp.i
+.PHONY : player/player.cpp.i
 
-player.s: player.cpp.s
+player/player.s: player/player.cpp.s
 
-.PHONY : player.s
+.PHONY : player/player.s
 
 # target to generate assembly for a file
-player.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player.cpp.s
-.PHONY : player.cpp.s
+player/player.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player/player.cpp.s
+.PHONY : player/player.cpp.s
 
 # Help Target
 help:
@@ -267,21 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... warships"
-	@echo "... board.o"
-	@echo "... board.i"
-	@echo "... board.s"
-	@echo "... configuration.o"
-	@echo "... configuration.i"
-	@echo "... configuration.s"
-	@echo "... helper.o"
-	@echo "... helper.i"
-	@echo "... helper.s"
+	@echo "... board/board.o"
+	@echo "... board/board.i"
+	@echo "... board/board.s"
+	@echo "... common/common.o"
+	@echo "... common/common.i"
+	@echo "... common/common.s"
+	@echo "... config/configuration.o"
+	@echo "... config/configuration.i"
+	@echo "... config/configuration.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... player.o"
-	@echo "... player.i"
-	@echo "... player.s"
+	@echo "... player/player.o"
+	@echo "... player/player.i"
+	@echo "... player/player.s"
 .PHONY : help
 
 

@@ -80,22 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/board.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/board/board.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/board.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/board/board.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/common/common.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/common/common.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/helper.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/helper.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.h">
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">
@@ -104,10 +104,10 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/mini/ini.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/player.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/player/player.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/player.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/player/player.h">
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/CMakeLists.txt">
