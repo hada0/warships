@@ -6,37 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/vuhongann/CLionProjects/warships/board/board.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.cpp
 string
 -
-map
--
-vector
--
-../board/board.h
-/Users/vuhongann/CLionProjects/warships/board/board.h
-
-/Users/vuhongann/CLionProjects/warships/config/configuration.h
-map
--
-vector
--
-../board/board.h
-/Users/vuhongann/CLionProjects/warships/board/board.h
-
-/Users/vuhongann/CLionProjects/warships/main.cpp
 iostream
 -
-config/configuration.h
-/Users/vuhongann/CLionProjects/warships/config/configuration.h
-player/player.h
-/Users/vuhongann/CLionProjects/warships/player/player.h
+regex
+-
+utils.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.h
 
-/Users/vuhongann/CLionProjects/warships/player/player.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.h
 vector
 -
-../board/board.h
-/Users/vuhongann/CLionProjects/warships/board/board.h
-../config/configuration.h
-/Users/vuhongann/CLionProjects/warships/config/configuration.h
+regex
+-
 

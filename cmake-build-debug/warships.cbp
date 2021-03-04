@@ -86,12 +86,6 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/board/board.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/common/common.cpp">
-			<Option target="warships"/>
-		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/common/common.h">
-			<Option target="warships"/>
-		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.cpp">
 			<Option target="warships"/>
 		</Unit>
@@ -108,6 +102,12 @@
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/player/player.h">
+			<Option target="warships"/>
+		</Unit>
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/utils/utils.cpp">
+			<Option target="warships"/>
+		</Unit>
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/utils/utils.h">
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/CMakeLists.txt">

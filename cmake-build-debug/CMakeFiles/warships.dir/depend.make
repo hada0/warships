@@ -3,26 +3,28 @@
 
 CMakeFiles/warships.dir/board/board.cpp.o: ../board/board.cpp
 CMakeFiles/warships.dir/board/board.cpp.o: ../board/board.h
-CMakeFiles/warships.dir/board/board.cpp.o: ../common/common.h
 CMakeFiles/warships.dir/board/board.cpp.o: ../mini/ini.h
-
-CMakeFiles/warships.dir/common/common.cpp.o: ../common/common.cpp
-CMakeFiles/warships.dir/common/common.cpp.o: ../common/common.h
+CMakeFiles/warships.dir/board/board.cpp.o: ../utils/utils.h
 
 CMakeFiles/warships.dir/config/configuration.cpp.o: ../board/board.h
-CMakeFiles/warships.dir/config/configuration.cpp.o: ../common/common.h
 CMakeFiles/warships.dir/config/configuration.cpp.o: ../config/configuration.cpp
 CMakeFiles/warships.dir/config/configuration.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/config/configuration.cpp.o: ../mini/ini.h
+CMakeFiles/warships.dir/config/configuration.cpp.o: ../utils/utils.h
 
 CMakeFiles/warships.dir/main.cpp.o: ../board/board.h
 CMakeFiles/warships.dir/main.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/main.cpp.o: ../main.cpp
 CMakeFiles/warships.dir/main.cpp.o: ../player/player.h
+CMakeFiles/warships.dir/main.cpp.o: ../utils/utils.h
 
 CMakeFiles/warships.dir/player/player.cpp.o: ../board/board.h
 CMakeFiles/warships.dir/player/player.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/player/player.cpp.o: ../player/player.cpp
 CMakeFiles/warships.dir/player/player.cpp.o: ../player/player.h
 CMakeFiles/warships.dir/player/player.cpp.o: ../tabulate/tabulate.h
+CMakeFiles/warships.dir/player/player.cpp.o: ../utils/utils.h
+
+CMakeFiles/warships.dir/utils/utils.cpp.o: ../utils/utils.cpp
+CMakeFiles/warships.dir/utils/utils.cpp.o: ../utils/utils.h
 

@@ -6,6 +6,7 @@
 
 #include <utility>
 #include "../tabulate/tabulate.h"
+#include "../utils/utils.h"
 
 
 void player::setup() {
@@ -28,3 +29,13 @@ void player::displayKey() {
 }
 
 player::player(const configuration &config) : config(config) {}
+
+bool player::placeShip(ship ship, std::string coordinatesStr) {
+}
+
+bool player::validateCoordinates(std::string coordinatesStr) {
+
+    return false;
+}
+
+

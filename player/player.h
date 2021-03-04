@@ -6,8 +6,10 @@
 #define WARSHIPS_PLAYER_H
 
 #include <vector>
+#include <regex>
 #include "../board/board.h"
 #include "../config/configuration.h"
+
 
 class player {
 private:
@@ -15,9 +17,10 @@ private:
     std::vector<std::vector<nodeState>> shipsBoard;
 
 private:
-    std::vector<ship> shipLibrary;
     configuration config;
 public:
+    std::vector<ship> shipLibrary;
+
     player(const configuration &config);
 
     void setup();
@@ -26,7 +29,9 @@ public:
 
     void displayKey();
 
-    void placeShip();
+    bool placeShip(ship ship, std::string coordinates);
+
+    bool validateCoordinates(std::string coordinatesStr);
 
 };
 

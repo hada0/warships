@@ -150,33 +150,6 @@ board/board.cpp.s:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board/board.cpp.s
 .PHONY : board/board.cpp.s
 
-common/common.o: common/common.cpp.o
-
-.PHONY : common/common.o
-
-# target to build an object file
-common/common.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.o
-.PHONY : common/common.cpp.o
-
-common/common.i: common/common.cpp.i
-
-.PHONY : common/common.i
-
-# target to preprocess a source file
-common/common.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.i
-.PHONY : common/common.cpp.i
-
-common/common.s: common/common.cpp.s
-
-.PHONY : common/common.s
-
-# target to generate assembly for a file
-common/common.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/common/common.cpp.s
-.PHONY : common/common.cpp.s
-
 config/configuration.o: config/configuration.cpp.o
 
 .PHONY : config/configuration.o
@@ -258,6 +231,33 @@ player/player.cpp.s:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/player/player.cpp.s
 .PHONY : player/player.cpp.s
 
+utils/utils.o: utils/utils.cpp.o
+
+.PHONY : utils/utils.o
+
+# target to build an object file
+utils/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/utils/utils.cpp.o
+.PHONY : utils/utils.cpp.o
+
+utils/utils.i: utils/utils.cpp.i
+
+.PHONY : utils/utils.i
+
+# target to preprocess a source file
+utils/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/utils/utils.cpp.i
+.PHONY : utils/utils.cpp.i
+
+utils/utils.s: utils/utils.cpp.s
+
+.PHONY : utils/utils.s
+
+# target to generate assembly for a file
+utils/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/utils/utils.cpp.s
+.PHONY : utils/utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -270,9 +270,6 @@ help:
 	@echo "... board/board.o"
 	@echo "... board/board.i"
 	@echo "... board/board.s"
-	@echo "... common/common.o"
-	@echo "... common/common.i"
-	@echo "... common/common.s"
 	@echo "... config/configuration.o"
 	@echo "... config/configuration.i"
 	@echo "... config/configuration.s"
@@ -282,6 +279,9 @@ help:
 	@echo "... player/player.o"
 	@echo "... player/player.i"
 	@echo "... player/player.s"
+	@echo "... utils/utils.o"
+	@echo "... utils/utils.i"
+	@echo "... utils/utils.s"
 .PHONY : help
 
 

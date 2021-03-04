@@ -5,7 +5,7 @@
 #include <iostream>
 #include "configuration.h"
 #include "../mini/ini.h"
-#include "../common/common.h"
+#include "../utils/utils.h"
 #include "../board/board.h"
 
 void configuration::parse_config(std::string fileName) {
@@ -23,8 +23,8 @@ void configuration::parse_config(std::string fileName) {
     std::istringstream(aa) >> std::boolalpha >> autoplaceAll;
 
 //    std::string b = ini["Configuration"]["Board"];
-//    std::string boardHeight = common::split(b, "x").at(0);
-//    std::string boardWidth = common::split(b, "x").at(1);
+//    std::string boardHeight = utils::split(b, "x").at(0);
+//    std::string boardWidth = utils::split(b, "x").at(1);
 //    gameBoard.setDimensions(std::stoi(boardHeight), std::stoi(boardWidth));
 
     std::vector<ship> shipsConfig;

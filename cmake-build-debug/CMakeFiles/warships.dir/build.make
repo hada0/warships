@@ -83,18 +83,18 @@ CMakeFiles/warships.dir/board/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/board/board.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/board/board.cpp -o CMakeFiles/warships.dir/board/board.cpp.s
 
-CMakeFiles/warships.dir/common/common.cpp.o: CMakeFiles/warships.dir/flags.make
-CMakeFiles/warships.dir/common/common.cpp.o: ../common/common.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/warships.dir/common/common.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warships.dir/common/common.cpp.o -c /Users/vuhongann/CLionProjects/warships/common/common.cpp
+CMakeFiles/warships.dir/utils/utils.cpp.o: CMakeFiles/warships.dir/flags.make
+CMakeFiles/warships.dir/utils/utils.cpp.o: ../utils/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/warships.dir/utils/utils.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warships.dir/utils/utils.cpp.o -c /Users/vuhongann/CLionProjects/warships/utils/utils.cpp
 
-CMakeFiles/warships.dir/common/common.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warships.dir/common/common.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vuhongann/CLionProjects/warships/common/common.cpp > CMakeFiles/warships.dir/common/common.cpp.i
+CMakeFiles/warships.dir/utils/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warships.dir/utils/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vuhongann/CLionProjects/warships/utils/utils.cpp > CMakeFiles/warships.dir/utils/utils.cpp.i
 
-CMakeFiles/warships.dir/common/common.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/common/common.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/common/common.cpp -o CMakeFiles/warships.dir/common/common.cpp.s
+CMakeFiles/warships.dir/utils/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/utils/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/utils/utils.cpp -o CMakeFiles/warships.dir/utils/utils.cpp.s
 
 CMakeFiles/warships.dir/player/player.cpp.o: CMakeFiles/warships.dir/flags.make
 CMakeFiles/warships.dir/player/player.cpp.o: ../player/player.cpp
@@ -126,7 +126,7 @@ CMakeFiles/warships.dir/config/configuration.cpp.s: cmake_force
 warships_OBJECTS = \
 "CMakeFiles/warships.dir/main.cpp.o" \
 "CMakeFiles/warships.dir/board/board.cpp.o" \
-"CMakeFiles/warships.dir/common/common.cpp.o" \
+"CMakeFiles/warships.dir/utils/utils.cpp.o" \
 "CMakeFiles/warships.dir/player/player.cpp.o" \
 "CMakeFiles/warships.dir/config/configuration.cpp.o"
 
@@ -135,7 +135,7 @@ warships_EXTERNAL_OBJECTS =
 
 warships: CMakeFiles/warships.dir/main.cpp.o
 warships: CMakeFiles/warships.dir/board/board.cpp.o
-warships: CMakeFiles/warships.dir/common/common.cpp.o
+warships: CMakeFiles/warships.dir/utils/utils.cpp.o
 warships: CMakeFiles/warships.dir/player/player.cpp.o
 warships: CMakeFiles/warships.dir/config/configuration.cpp.o
 warships: CMakeFiles/warships.dir/build.make

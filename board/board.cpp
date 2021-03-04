@@ -5,7 +5,7 @@
 #include <iostream>
 #include "board.h"
 #include "../mini/ini.h"
-#include "../common/common.h"
+#include "../utils/utils.h"
 
 ship::ship(std::string type, int length) : type(type), length(length) {}
 
