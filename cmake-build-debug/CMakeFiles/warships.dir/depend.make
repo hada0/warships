@@ -18,6 +18,7 @@ CMakeFiles/warships.dir/config/configuration.cpp.o: ../mini/ini.h
 CMakeFiles/warships.dir/main.cpp.o: ../board/board.h
 CMakeFiles/warships.dir/main.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/main.cpp.o: ../main.cpp
+CMakeFiles/warships.dir/main.cpp.o: ../player/player.h
 
 CMakeFiles/warships.dir/player/player.cpp.o: ../board/board.h
 CMakeFiles/warships.dir/player/player.cpp.o: ../config/configuration.h
