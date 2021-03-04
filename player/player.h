@@ -13,25 +13,25 @@
 
 class player {
 private:
-    board movesBoard;
-    board shipsBoard;
-
-private:
     configuration config;
 public:
+    player(configuration config);
+
+    board movesBoard = board(config.getHeight(), config.getWidth());
+    board shipsBoard = board(config.getHeight(), config.getWidth());
+
     std::vector<ship> shipLibrary;
 
-    player(const configuration &config);
 
     void setup();
 
-    void displayBoard();
+//    void displayBoard();
 
     void displayKey();
 
-    bool placeShip(ship ship, std::string coordinates);
+//    bool placeShip(ship ship, std::string coordinates);
 
-    bool validateCoordinates(std::string coordinatesStr);
+//    bool validateCoordinates(std::string coordinatesStr);
 
 };
 

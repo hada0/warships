@@ -14,10 +14,14 @@ private:
     bool mines{};
     bool salvo{};
     bool autoplaceAll{};
-    board gameBoard;
+    int height{};
+    int width{};
 public:
-    static board getGameBoard();
+    int getHeight() const;
 
+    int getWidth() const;
+
+public:
     std::vector<ship> & getShipLibrary();
 
 private:

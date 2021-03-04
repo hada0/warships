@@ -25,7 +25,7 @@ void configuration::parse_config(std::string fileName) {
 //    std::string b = ini["Configuration"]["Board"];
 //    std::string boardHeight = utils::split(b, "x").at(0);
 //    std::string boardWidth = utils::split(b, "x").at(1);
-//    gameBoard.setDimensions(std::stoi(boardHeight), std::stoi(boardWidth));
+//    gameBoardTemplate.setDimensions(std::stoi(boardHeight), std::stoi(boardWidth));
 
     std::vector<ship> shipsConfig;
     std::vector<int> shipsQuantity;
@@ -70,10 +70,11 @@ void configuration::parse_config(std::string fileName) {
 }
 
 void configuration::default_config() {
-    mines = false;
+    mines = true;
     salvo = false;
     autoplaceAll = false;
-    gameBoard.setDimensions(8,8);
+    height = 8;
+    width = 8;
 
     std::vector<ship> ships;
     shipLibrary.emplace_back("CARRIER", 5);
@@ -90,10 +91,14 @@ void configuration::default_config() {
 
 configuration::configuration() = default;
 
-board configuration::getGameBoard() {
-    return board();
-}
-
 std::vector<ship> &configuration::getShipLibrary() {
     return shipLibrary;
+}
+
+int configuration::getHeight() const {
+    return height;
+}
+
+int configuration::getWidth() const {
+    return width;
 }

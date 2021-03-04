@@ -25,9 +25,16 @@ int main() {
 //
 //
 //    }
+    auto ref = p1.movesBoard.getGrid();
 
-    std::vector<int> c;
-    c = utils::parseCoordinates("A2");
+    std::cout << "hey" << std::endl;
+    for (std::vector<nodeState> i : *p1.movesBoard.getGrid()) {
+        std::cout << "thing\n";
+    }
+    std::cout << "hey2" << std::endl;
+
+    nodeState n = p1.movesBoard.getNodeStateAtCoordinates(1,1);
+    std::cout << "nodestate" << n << std::endl;
 
     std::cout << "Bye, World!" << std::endl;
 

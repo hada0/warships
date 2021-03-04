@@ -35,16 +35,19 @@ class board {
 private:
     int height{};
     int width{};
-    std::vector<std::vector<nodeState>> grid;
-
 public:
-    board();
+    board(int height, int width);
 
-    void setDimensions(int height, int width);
+private:
+    std::vector<std::vector<nodeState>> grid;
+public:
+    const std::vector<std::vector<nodeState>> *getGrid() const;
 
-//    bool validate(std::string dimensions);
+    //    bool validate(std::string dimensions);
 
     void createBoard();
+
+    nodeState getNodeStateAtCoordinates(int x, int y);
 };
 
 #endif //WARSHIPS_BOARD_H

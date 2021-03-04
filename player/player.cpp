@@ -10,14 +10,10 @@
 
 
 void player::setup() {
-    movesBoard = config.getGameBoard();
     movesBoard.createBoard();
-    shipsBoard = config.getGameBoard();
     shipsBoard.createBoard();
     shipLibrary = config.getShipLibrary();
 }
-
-//player(const configuration &config) : config(config) {}
 
 void player::displayKey() {
     tabulate::Table lib;
@@ -30,15 +26,16 @@ void player::displayKey() {
     std::cout << lib << std::endl;
 }
 
-player::player(const configuration &config) : config(config) {}
+player::player(configuration config) : config(std::move(config)) {}
 
-bool player::placeShip(ship ship, std::string coordinatesStr) {
-}
 
-bool player::validateCoordinates(std::string coordinatesStr) {
-    std::vector<int> coordinates = utils::parseCoordinates(coordinatesStr);
+//bool player::placeShip(ship ship, std::string coordinatesStr) {
+//}
 
-    return false;
-}
+//bool player::validateCoordinates(std::string coordinatesStr) {
+//    std::vector<int> coordinates = utils::parseCoordinates(coordinatesStr);
+//
+//    return false;
+//}
 
 
