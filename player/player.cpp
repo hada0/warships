@@ -10,8 +10,10 @@
 
 
 void player::setup() {
-    movesBoard = config.getGameBoard().createBoard();
-    shipsBoard = config.getGameBoard().createBoard();
+    movesBoard = config.getGameBoard();
+    movesBoard.createBoard();
+    shipsBoard = config.getGameBoard();
+    shipsBoard.createBoard();
     shipLibrary = config.getShipLibrary();
 }
 
@@ -34,6 +36,7 @@ bool player::placeShip(ship ship, std::string coordinatesStr) {
 }
 
 bool player::validateCoordinates(std::string coordinatesStr) {
+    std::vector<int> coordinates = utils::parseCoordinates(coordinatesStr);
 
     return false;
 }

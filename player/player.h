@@ -13,8 +13,8 @@
 
 class player {
 private:
-    std::vector<std::vector<nodeState>> movesBoard;
-    std::vector<std::vector<nodeState>> shipsBoard;
+    board movesBoard;
+    board shipsBoard;
 
 private:
     configuration config;

@@ -63,8 +63,7 @@ std::vector<int> utils::parseCoordinates(std::string coordinatesStr) {
     }
     coord.emplace_back(x);
     coord.emplace_back(y);
-
-    std::cout << "x:" << x << "\ny:" << y << std::endl;
+//    std::cout << "x:" << x << "\ny:" << y << std::endl;
 
     return std::vector<int>();
 }

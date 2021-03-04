@@ -9,9 +9,9 @@
 
 ship::ship(std::string type, int length) : type(type), length(length) {}
 
-bool board::validate(std::string dimensions) {
-    return dimensions.find("x") != std::string::npos;
-}
+//bool board::validate(std::string dimensions) {
+//    return dimensions.find("x") != std::string::npos;
+//}
 
 board::board() {}
 
@@ -20,7 +20,7 @@ void board::setDimensions(int height, int width) {
     width = width;
 }
 
-std::vector<std::vector<nodeState>> board::createBoard() const {
+void board::createBoard() {
     std::vector<nodeState> columns(height);
     for (int i = 0; i < height; i++) {
         columns.push_back(nodeState::EMPTY);
@@ -31,5 +31,8 @@ std::vector<std::vector<nodeState>> board::createBoard() const {
         rows.push_back(columns);
     }
 
-    return rows;
+    grid = rows;
 }
+
+
+
