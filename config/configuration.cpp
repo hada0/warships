@@ -6,6 +6,7 @@
 #include "configuration.h"
 #include "../mini/ini.h"
 #include "../common/common.h"
+#include "board.h"
 
 ship::ship(std::string type, int length, int lifePoints) : type(type), length(length), lifePoints(lifePoints) {}
 
@@ -90,4 +91,12 @@ void configuration::default_config() {
 }
 
 configuration::configuration() {
+}
+
+board configuration::getGameBoard() {
+    return board();
+}
+
+const std::vector<ship> &configuration::getShipLibrary() const {
+    return shipLibrary;
 }

@@ -6,9 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/Users/vuhongann/CLionProjects/warships/board/board.cpp
+iostream
+-
+board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
+../mini/ini.h
+/Users/vuhongann/CLionProjects/warships/mini/ini.h
+../common/common.h
+/Users/vuhongann/CLionProjects/warships/common/common.h
+
 /Users/vuhongann/CLionProjects/warships/board/board.h
 string
 -
+map
+-
+vector
+-
+../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
 
 /Users/vuhongann/CLionProjects/warships/common/common.h
 vector
@@ -23,6 +39,8 @@ configuration.h
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
 ../common/common.h
 /Users/vuhongann/CLionProjects/warships/common/common.h
+board.h
+/Users/vuhongann/CLionProjects/warships/config/board.h
 
 /Users/vuhongann/CLionProjects/warships/config/configuration.h
 map
@@ -31,6 +49,12 @@ vector
 -
 ../board/board.h
 /Users/vuhongann/CLionProjects/warships/board/board.h
+
+/Users/vuhongann/CLionProjects/warships/main.cpp
+iostream
+-
+config/configuration.h
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
 
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
 string
@@ -53,4 +77,18 @@ sys/stat.h
 -
 cctype
 -
+
+/Users/vuhongann/CLionProjects/warships/player/player.cpp
+player.h
+/Users/vuhongann/CLionProjects/warships/player/player.h
+utility
+-
+
+/Users/vuhongann/CLionProjects/warships/player/player.h
+vector
+-
+../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
+../config/configuration.h
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
 

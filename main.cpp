@@ -5,7 +5,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
     configuration gameConfig = configuration();
-    gameConfig.parse_config("config.ini");
+    gameConfig.default_config();
 
     std::cout << "Bye, World!" << std::endl;
 

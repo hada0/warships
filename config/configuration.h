@@ -9,20 +9,18 @@
 #include <vector>
 #include "../board/board.h"
 
-struct ship {
-    ship(std::string type, int length, int lifePoints);
-
-    std::string type = "";
-    int length = 0;
-    int lifePoints = 0;
-};
-
 class configuration {
 private:
     bool mines;
     bool salvo;
     bool autoplaceAll;
     board gameBoard;
+public:
+    board getGameBoard();
+
+    std::vector<ship> getShipLibrary();
+
+private:
     std::vector<ship> shipLibrary;
 
 public:

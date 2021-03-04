@@ -20,6 +20,7 @@ CMakeFiles/warships.dir/main.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/warships.dir/player/player.cpp.o: ../board/board.h
+CMakeFiles/warships.dir/player/player.cpp.o: ../config/configuration.h
 CMakeFiles/warships.dir/player/player.cpp.o: ../player/player.cpp
 CMakeFiles/warships.dir/player/player.cpp.o: ../player/player.h
 

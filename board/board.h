@@ -6,6 +6,30 @@
 #define WARSHIPS_BOARD_H
 
 #include <string>
+#include <map>
+#include <vector>
+#include "../board/board.h"
+
+struct ship {
+    ship(std::string type, int length, int lifePoints);
+
+    std::string type = "";
+    int length = 0;
+    int lifePoints = 0;
+};
+
+enum nodeState {
+    EMPTY,
+    HIT,
+    MISS,
+    SUNK,
+
+    CARRIER,
+    BATTLESHIP,
+    DESTROYER,
+    SUBMARINE,
+    PATROL
+};
 
 class board {
 private:
@@ -17,7 +41,9 @@ public:
 
     void setDimensions(int height, int width);
 
-    static bool validate(std::string dimensions);
+    bool validate(std::string dimensions);
+
+    std::vector<std::vector<nodeState>> createBoard() const;
 };
 
 #endif //WARSHIPS_BOARD_H
