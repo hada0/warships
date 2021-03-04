@@ -6,9 +6,7 @@
 #include "configuration.h"
 #include "../mini/ini.h"
 #include "../common/common.h"
-#include "board.h"
-
-ship::ship(std::string type, int length, int lifePoints) : type(type), length(length), lifePoints(lifePoints) {}
+#include "../board/board.h"
 
 void configuration::parse_config(std::string fileName) {
     mINI::INIFile file(fileName);
@@ -51,7 +49,7 @@ void configuration::parse_config(std::string fileName) {
         if (it.first == "Ship_Definition") {
             auto collection = it.second;
             for (auto it2 : collection) {
-                shipsConfig.push_back(ship(it2.first, std::stoi(it2.second), std::stoi(it2.second)));
+                shipsConfig.emplace_back(it2.first, std::stoi(it2.second));
             }
         }
         if (it.first == "Ship_Library") {
@@ -78,25 +76,24 @@ void configuration::default_config() {
     gameBoard.setDimensions(8,8);
 
     std::vector<ship> ships;
-    shipLibrary.push_back(ship("CARRIER", 5, 5));
-    shipLibrary.push_back(ship("CARRIER", 5, 5));
-    shipLibrary.push_back(ship("BATTLESHIP", 4, 4));
-    shipLibrary.push_back(ship("BATTLESHIP", 4, 4));
-    shipLibrary.push_back(ship("DESTROYER", 3, 3));
-    shipLibrary.push_back(ship("DESTROYER", 3, 3));
-    shipLibrary.push_back(ship("SUBMARINE", 3, 3));
-    shipLibrary.push_back(ship("SUBMARINE", 3, 3));
-    shipLibrary.push_back(ship("PATROL", 2, 2));
-    shipLibrary.push_back(ship("PATROL", 2, 2));
+    shipLibrary.emplace_back("CARRIER", 5);
+    shipLibrary.emplace_back("CARRIER", 5);
+    shipLibrary.emplace_back("BATTLESHIP", 4);
+    shipLibrary.emplace_back("BATTLESHIP", 4);
+    shipLibrary.emplace_back("DESTROYER", 3);
+    shipLibrary.emplace_back("DESTROYER", 3);
+    shipLibrary.emplace_back("SUBMARINE", 3);
+    shipLibrary.emplace_back("SUBMARINE", 3);
+    shipLibrary.emplace_back("PATROL", 2);
+    shipLibrary.emplace_back("PATROL", 2);
 }
 
-configuration::configuration() {
-}
+configuration::configuration() = default;
 
 board configuration::getGameBoard() {
     return board();
 }
 
-const std::vector<ship> &configuration::getShipLibrary() const {
+std::vector<ship> &configuration::getShipLibrary() {
     return shipLibrary;
 }

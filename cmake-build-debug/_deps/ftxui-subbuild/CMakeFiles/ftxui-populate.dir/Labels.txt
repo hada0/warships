@@ -1,0 +1,14 @@
+# Target labels
+ ftxui-populate
+# Source files and their labels
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-skip-update.rule

@@ -17,9 +17,7 @@ private:
 private:
     std::vector<ship> shipLibrary;
     configuration config;
-
 public:
-
     player(const configuration &config);
 
     void setup();
@@ -30,6 +28,6 @@ public:
 
     void placeShip();
 
-
+};
 
 #endif //WARSHIPS_PLAYER_H

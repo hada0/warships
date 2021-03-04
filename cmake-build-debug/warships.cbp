@@ -98,9 +98,6 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/ftxui/dom/elements.h">
-			<Option target="warships"/>
-		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">
 			<Option target="warships"/>
 		</Unit>

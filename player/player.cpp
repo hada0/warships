@@ -5,6 +5,8 @@
 #include "player.h"
 
 #include <utility>
+#include "../tabulate/tabulate.h"
+
 
 void player::setup() {
     movesBoard = config.getGameBoard().createBoard();
@@ -12,10 +14,17 @@ void player::setup() {
     shipLibrary = config.getShipLibrary();
 }
 
-player::player(const configuration &config) : config(config) {}
+//player(const configuration &config) : config(config) {}
 
 void player::displayKey() {
-
+    tabulate::Table lib;
+    std::string state;
+    lib.add_row({"SHIP TYPE", "STATUS"});
+    for (ship s : shipLibrary) {
+        if (!s.state) { state = "AVAILABLE";} else {state = "DEPLOYED";}
+        lib.add_row({s.type, state});
+    }
+    std::cout << lib << std::endl;
 }
 
-
+player::player(const configuration &config) : config(config) {}

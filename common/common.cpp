@@ -3,6 +3,7 @@
 //
 
 #include <string>
+#include <iostream>
 #include "common.h"
 
 std::vector<std::string> common::split(std::string &str, const std::string &delim) {
@@ -18,4 +19,8 @@ std::vector<std::string> common::split(std::string &str, const std::string &deli
     }
     while (pos < str.length() && prev < str.length());
     return tokens;
+}
+
+void clearConsole() {
+    std::cout << "\x1B[2J\x1B[H";
 }

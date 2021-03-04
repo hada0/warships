@@ -11,14 +11,14 @@
 
 class configuration {
 private:
-    bool mines;
-    bool salvo;
-    bool autoplaceAll;
+    bool mines{};
+    bool salvo{};
+    bool autoplaceAll{};
     board gameBoard;
 public:
-    board getGameBoard();
+    static board getGameBoard();
 
-    std::vector<ship> getShipLibrary();
+    std::vector<ship> & getShipLibrary();
 
 private:
     std::vector<ship> shipLibrary;

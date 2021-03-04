@@ -11,11 +11,11 @@
 #include "../board/board.h"
 
 struct ship {
-    ship(std::string type, int length, int lifePoints);
+    ship(std::string type, int length);
 
     std::string type = "";
     int length = 0;
-    int lifePoints = 0;
+    bool state = 0;
 };
 
 enum nodeState {

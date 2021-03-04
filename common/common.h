@@ -12,4 +12,5 @@
 class common {
 public:
     static std::vector<std::string> split(std::string &str, const std::string& delim);
+    void clearConsole();
 };

@@ -7,6 +7,8 @@
 #include "../mini/ini.h"
 #include "../common/common.h"
 
+ship::ship(std::string type, int length) : type(type), length(length) {}
+
 bool board::validate(std::string dimensions) {
     return dimensions.find("x") != std::string::npos;
 }

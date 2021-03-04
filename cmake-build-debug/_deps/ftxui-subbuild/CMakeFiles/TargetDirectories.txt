@@ -1,0 +1,3 @@
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/rebuild_cache.dir
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/edit_cache.dir
+/Users/vuhongann/CLionProjects/warships/cmake-build-debug/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.dir
