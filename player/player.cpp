@@ -16,11 +16,11 @@ void player::setup() {
     shipLibrary = config.getShipLibrary();
 }
 
-void player::displayKey() {
+void player::displayLib() {
     tabulate::Table lib;
     std::string state;
     lib.add_row({"SHIP TYPE", "STATUS"});
-    for (ship s : shipLibrary) {
+    for (Node s : shipLibrary) {
         if (!s.state) { state = "AVAILABLE";} else {state = "DEPLOYED";}
         lib.add_row({s.type, state});
     }

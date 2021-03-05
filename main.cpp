@@ -13,7 +13,7 @@ int main() {
     player p1(gameConfig);
     p1.setup();
 
-    p1.displayKey();
+    p1.displayLib();
 
 //    for (ship s : p1.shipLibrary) {
 //        std::string inputCoordinates;

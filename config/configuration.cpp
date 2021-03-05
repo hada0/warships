@@ -27,7 +27,7 @@ void configuration::parse_config(std::string fileName) {
 //    std::string boardWidth = utils::split(b, "x").at(1);
 //    gameBoardTemplate.setDimensions(std::stoi(boardHeight), std::stoi(boardWidth));
 
-    std::vector<ship> shipsConfig;
+    std::vector<Node> shipsConfig;
     std::vector<int> shipsQuantity;
     bool hasSection = ini.has("ship_definition");
 
@@ -76,7 +76,6 @@ void configuration::default_config() {
     height = 8;
     width = 8;
 
-    std::vector<ship> ships;
     shipLibrary.emplace_back("CARRIER", 5);
     shipLibrary.emplace_back("CARRIER", 5);
     shipLibrary.emplace_back("BATTLESHIP", 4);
@@ -91,7 +90,7 @@ void configuration::default_config() {
 
 configuration::configuration() = default;
 
-std::vector<ship> &configuration::getShipLibrary() {
+std::vector<Node> &configuration::getShipLibrary() {
     return shipLibrary;
 }
 

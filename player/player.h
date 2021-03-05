@@ -24,14 +24,14 @@ public:
 public:
     player(configuration config);
 
-    std::vector<ship> shipLibrary;
+    std::vector<Node> shipLibrary;
 
 
     void setup();
 
 //    void displayBoard();
 
-    void displayKey();
+    void displayLib();
 
 //    bool placeShip(ship ship, std::string coordinates);
 

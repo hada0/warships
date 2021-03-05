@@ -10,12 +10,16 @@
 #include <vector>
 #include "../board/board.h"
 
-struct node {
-    ship(std::string type, int length);
+// Node will represent the state of each cell in a grid.
+struct Node {
+    Node(std::string type, int length);
 
-    std::string type = "hit";
-    int length = 0;
+    std::string type = "EMPTY";
+    int length = 1;
+
+    // state is populated if it is a boat that needs to be deployed.
     bool state = 0;
+    int health = length;
 };
 
 enum nodeState {

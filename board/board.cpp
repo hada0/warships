@@ -10,7 +10,7 @@
 #include "../mini/ini.h"
 #include "../utils/utils.h"
 
-ship::ship(std::string type, int length) : type(type), length(length) {}
+Node::Node(std::string type, int length) : type(type), length(length) {}
 
 void board::createBoard() {
     std::vector<nodeState> columns(height);
