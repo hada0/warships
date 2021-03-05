@@ -4,4 +4,4 @@ Initial:
 
 Struct "SHIP" and ENUM types for each state.
 
-Update: Change the struct SHIP to a Node struct which can also be a 
+Update: Change the struct SHIP to a node struct which can also be a

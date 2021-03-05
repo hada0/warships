@@ -10,9 +10,9 @@
 #include <vector>
 #include "../board/board.h"
 
-// Node will represent the state of each cell in a grid.
-struct Node {
-    Node(std::string type, int length);
+// node will represent the state of each cell in a grid.
+struct node {
+    node(std::string type, int length);
 
     std::string type = "EMPTY";
     int length = 1;

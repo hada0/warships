@@ -24,7 +24,7 @@ public:
 public:
     player(configuration config);
 
-    std::vector<Node> shipLibrary;
+    std::vector<node> shipLibrary;
 
 
     void setup();
