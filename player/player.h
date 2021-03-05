@@ -14,11 +14,15 @@
 class player {
 private:
     configuration config;
-public:
-    player(configuration config);
-
     board movesBoard = board(config.getHeight(), config.getWidth());
     board shipsBoard = board(config.getHeight(), config.getWidth());
+public:
+    board *getMovesBoard();
+
+    board *getShipsBoard();
+
+public:
+    player(configuration config);
 
     std::vector<ship> shipLibrary;
 
@@ -30,8 +34,6 @@ public:
     void displayKey();
 
 //    bool placeShip(ship ship, std::string coordinates);
-
-//    bool validateCoordinates(std::string coordinatesStr);
 
 };
 

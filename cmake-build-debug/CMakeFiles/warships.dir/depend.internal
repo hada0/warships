@@ -4,7 +4,10 @@
 CMakeFiles/warships.dir/board/board.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.cpp
  /Users/vuhongann/CLionProjects/warships/board/board.h
+ /Users/vuhongann/CLionProjects/warships/config/configuration.h
  /Users/vuhongann/CLionProjects/warships/mini/ini.h
+ /Users/vuhongann/CLionProjects/warships/player/player.h
+ /Users/vuhongann/CLionProjects/warships/tabulate/tabulate.h
  /Users/vuhongann/CLionProjects/warships/utils/utils.h
 CMakeFiles/warships.dir/config/configuration.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.h

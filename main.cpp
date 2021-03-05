@@ -2,6 +2,7 @@
 #include "config/configuration.h"
 #include "player/player.h"
 #include "utils/utils.h"
+#include "board/board.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -25,16 +26,15 @@ int main() {
 //
 //
 //    }
-    auto ref = p1.movesBoard.getGrid();
+//    auto ref = p1.getMovesBoard()->getGrid();
 
-    std::cout << "hey" << std::endl;
-    for (std::vector<nodeState> i : *p1.movesBoard.getGrid()) {
+    for (std::vector<nodeState> i : *p1.getMovesBoard()->getGrid()) {
         std::cout << "thing\n";
     }
-    std::cout << "hey2" << std::endl;
 
-    nodeState n = p1.movesBoard.getNodeStateAtCoordinates(1,1);
-    std::cout << "nodestate" << n << std::endl;
+    nodeState n = p1.getMovesBoard()->getNodeStateAtCoordinates(2,2);
+    bool m = p1.getMovesBoard()->validateCoordinates("A1");
+    std::cout << "nodestate" << m << std::endl;
 
     std::cout << "Bye, World!" << std::endl;
 

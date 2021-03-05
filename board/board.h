@@ -48,6 +48,9 @@ public:
     void createBoard();
 
     nodeState getNodeStateAtCoordinates(int x, int y);
+
+    bool validateCoordinates(std::string coordinatesStr);
+
 };
 
 #endif //WARSHIPS_BOARD_H

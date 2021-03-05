@@ -59,11 +59,12 @@ std::vector<int> utils::parseCoordinates(std::string coordinatesStr) {
     std::smatch match;
     if (std::regex_search(coordinatesStr, match, coordinates)) {
         x = convertAlphaToInt(match.str(1));
-        y = std::stoi(match.str(2));
+        y = std::stoi(match.str(2)) - 1;
     }
+
     coord.emplace_back(x);
     coord.emplace_back(y);
 //    std::cout << "x:" << x << "\ny:" << y << std::endl;
 
-    return std::vector<int>();
+    return coord;
 }
