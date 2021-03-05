@@ -1,0 +1,1 @@
+The purpose of this README is to track the changes and decisions made during development of warships.

@@ -10,10 +10,10 @@
 #include <vector>
 #include "../board/board.h"
 
-struct ship {
+struct node {
     ship(std::string type, int length);
 
-    std::string type = "";
+    std::string type = "hit";
     int length = 0;
     bool state = 0;
 };

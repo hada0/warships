@@ -14,15 +14,13 @@ ship::ship(std::string type, int length) : type(type), length(length) {}
 
 void board::createBoard() {
     std::vector<nodeState> columns(height);
-    for (int i = 0; i < height; i++) {
-        columns.push_back(nodeState::EMPTY);
-    }
-
-//    std::vector<std::vector<nodeState>> rows;
     for (int i = 0; i < width; i++) {
+        std::vector<nodeState> columns;
+        for (int j = 0; j < height; j++) {
+            columns.push_back(nodeState::EMPTY);
+        }
         grid.push_back(columns);
     }
-//    grid = rows;
 }
 
 nodeState board::getNodeStateAtCoordinates(int x, int y) {
