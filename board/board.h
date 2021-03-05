@@ -22,19 +22,6 @@ struct node {
     int health = length;
 };
 
-enum nodeState {
-    EMPTY,
-    HIT,
-    MISS,
-    SUNK,
-
-    CARRIER,
-    BATTLESHIP,
-    DESTROYER,
-    SUBMARINE,
-    PATROL
-};
-
 class board {
 private:
     int height{};
@@ -43,15 +30,15 @@ public:
     board(int height, int width);
 
 private:
-    std::vector<std::vector<nodeState>> grid;
+    std::vector<std::vector<node>> grid;
 public:
-    const std::vector<std::vector<nodeState>> *getGrid() const;
+    const std::vector<std::vector<node>> *getGrid() const;
 
     //    bool validate(std::string dimensions);
 
     void createBoard();
 
-    nodeState getNodeStateAtCoordinates(int x, int y);
+    std::string getNodeStateAtCoordinates(int x, int y);
 
     bool validateCoordinates(std::string coordinatesStr);
 

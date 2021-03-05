@@ -28,11 +28,11 @@ int main() {
 //    }
 //    auto ref = p1.getMovesBoard()->getGrid();
 
-    for (std::vector<nodeState> i : *p1.getMovesBoard()->getGrid()) {
+    for (std::vector<node> i : *p1.getMovesBoard()->getGrid()) {
         std::cout << "thing\n";
     }
 
-    nodeState n = p1.getMovesBoard()->getNodeStateAtCoordinates(2,2);
+    std::string n = p1.getMovesBoard()->getNodeStateAtCoordinates(2,2);
     bool m = p1.getMovesBoard()->validateCoordinates("A1");
     std::cout << "nodestate" << m << std::endl;
 

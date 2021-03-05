@@ -32,12 +32,36 @@ vector
 ../board/board.h
 /Users/vuhongann/CLionProjects/warships/board/board.h
 
+/Users/vuhongann/CLionProjects/warships/config/configuration.cpp
+iostream
+-
+configuration.h
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
+../mini/ini.h
+/Users/vuhongann/CLionProjects/warships/mini/ini.h
+../utils/utils.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.h
+../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
+
 /Users/vuhongann/CLionProjects/warships/config/configuration.h
 map
 -
 vector
 -
 ../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
+
+/Users/vuhongann/CLionProjects/warships/main.cpp
+iostream
+-
+config/configuration.h
+/Users/vuhongann/CLionProjects/warships/config/configuration.h
+player/player.h
+/Users/vuhongann/CLionProjects/warships/player/player.h
+utils/utils.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.h
+board/board.h
 /Users/vuhongann/CLionProjects/warships/board/board.h
 
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
@@ -61,6 +85,18 @@ sys/stat.h
 -
 cctype
 -
+
+/Users/vuhongann/CLionProjects/warships/player/player.cpp
+player.h
+/Users/vuhongann/CLionProjects/warships/player/player.h
+utility
+-
+../tabulate/tabulate.h
+/Users/vuhongann/CLionProjects/warships/tabulate/tabulate.h
+../utils/utils.h
+/Users/vuhongann/CLionProjects/warships/utils/utils.h
+../board/board.h
+/Users/vuhongann/CLionProjects/warships/board/board.h
 
 /Users/vuhongann/CLionProjects/warships/player/player.h
 vector

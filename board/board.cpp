@@ -13,26 +13,25 @@
 node::node(std::string type, int length) : type(type), length(length) {}
 
 void board::createBoard() {
-    std::vector<nodeState> columns(height);
+    std::vector<node> columns;
     for (int i = 0; i < width; i++) {
-        std::vector<nodeState> columns;
+        std::vector<node> columns;
         for (int j = 0; j < height; j++) {
-            columns.push_back(nodeState::EMPTY);
+            columns.push_back(node("EMPTY", 1));
         }
         grid.push_back(columns);
     }
 }
 
-nodeState board::getNodeStateAtCoordinates(int x, int y) {
-    std::vector<nodeState> column;
-    nodeState row;
+std::string board::getNodeStateAtCoordinates(int x, int y) {
+    std::vector<node> column;
     column = getGrid()->at(x);
-    row = column.at(y);
+    node row = column.at(y);
     std::cout << "hello "<< std::endl;
-    return row;
+    return row.type;
 }
 
-const std::vector<std::vector<nodeState>> *board::getGrid() const {
+const std::vector<std::vector<node>> *board::getGrid() const {
     return &grid;
 }
 
@@ -47,5 +46,5 @@ bool board::validateCoordinates(std::string coordinatesStr) {
     int x = c.at(0);
     int y = c.at(1);
     std::cout << "x :" << x << " y : " << y << std::endl;
-    return(getNodeStateAtCoordinates(x, y) == EMPTY);
+    return(getNodeStateAtCoordinates(x, y) == "EMPTY");
 }
