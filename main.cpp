@@ -1,13 +1,15 @@
 #include <iostream>
-#include "config/configuration.h"
+#include "configuration.h"
 #include "player/player.h"
 #include "utils/utils.h"
+#include "mini/ini.h"
 #include "board/board.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
     configuration gameConfig = configuration();
+//    gameConfig.parse_config("config.ini");
     gameConfig.default_config();
 
     player p1(gameConfig);
@@ -33,8 +35,10 @@ int main() {
     }
 
     std::string n = p1.getMovesBoard()->getNodeStateAtCoordinates(2,2);
-    bool m = p1.getMovesBoard()->validateCoordinates("A1");
+    bool m = p1.getMovesBoard()->validateCoordinates("B3");
     std::cout << "nodestate" << m << std::endl;
+
+    p1.displayBoard();
 
     std::cout << "Bye, World!" << std::endl;
 

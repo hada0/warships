@@ -7,7 +7,7 @@
 
 #include <map>
 #include <vector>
-#include "../board/board.h"
+#include "board/board.h"
 
 class configuration {
 private:

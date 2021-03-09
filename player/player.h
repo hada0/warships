@@ -8,7 +8,7 @@
 #include <vector>
 #include <regex>
 #include "../board/board.h"
-#include "../config/configuration.h"
+#include "../configuration.h"
 
 
 class player {
@@ -29,9 +29,11 @@ public:
 
     void setup();
 
-//    void displayBoard();
+    void displayBoard();
 
     void displayLib();
+
+    std::string printCellValue(node n);
 
 //    bool placeShip(ship ship, std::string coordinates);
 

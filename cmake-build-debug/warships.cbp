@@ -86,10 +86,10 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/board/board.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.h">
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">

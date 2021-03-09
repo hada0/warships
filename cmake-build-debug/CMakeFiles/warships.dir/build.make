@@ -109,18 +109,18 @@ CMakeFiles/warships.dir/player/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/player/player.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/player/player.cpp -o CMakeFiles/warships.dir/player/player.cpp.s
 
-CMakeFiles/warships.dir/config/configuration.cpp.o: CMakeFiles/warships.dir/flags.make
-CMakeFiles/warships.dir/config/configuration.cpp.o: ../config/configuration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warships.dir/config/configuration.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warships.dir/config/configuration.cpp.o -c /Users/vuhongann/CLionProjects/warships/config/configuration.cpp
+CMakeFiles/warships.dir/configuration.cpp.o: CMakeFiles/warships.dir/flags.make
+CMakeFiles/warships.dir/configuration.cpp.o: ../configuration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warships.dir/configuration.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warships.dir/configuration.cpp.o -c /Users/vuhongann/CLionProjects/warships/configuration.cpp
 
-CMakeFiles/warships.dir/config/configuration.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warships.dir/config/configuration.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vuhongann/CLionProjects/warships/config/configuration.cpp > CMakeFiles/warships.dir/config/configuration.cpp.i
+CMakeFiles/warships.dir/configuration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warships.dir/configuration.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vuhongann/CLionProjects/warships/configuration.cpp > CMakeFiles/warships.dir/configuration.cpp.i
 
-CMakeFiles/warships.dir/config/configuration.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/config/configuration.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/config/configuration.cpp -o CMakeFiles/warships.dir/config/configuration.cpp.s
+CMakeFiles/warships.dir/configuration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warships.dir/configuration.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vuhongann/CLionProjects/warships/configuration.cpp -o CMakeFiles/warships.dir/configuration.cpp.s
 
 # Object files for target warships
 warships_OBJECTS = \
@@ -128,7 +128,7 @@ warships_OBJECTS = \
 "CMakeFiles/warships.dir/board/board.cpp.o" \
 "CMakeFiles/warships.dir/utils/utils.cpp.o" \
 "CMakeFiles/warships.dir/player/player.cpp.o" \
-"CMakeFiles/warships.dir/config/configuration.cpp.o"
+"CMakeFiles/warships.dir/configuration.cpp.o"
 
 # External object files for target warships
 warships_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ warships: CMakeFiles/warships.dir/main.cpp.o
 warships: CMakeFiles/warships.dir/board/board.cpp.o
 warships: CMakeFiles/warships.dir/utils/utils.cpp.o
 warships: CMakeFiles/warships.dir/player/player.cpp.o
-warships: CMakeFiles/warships.dir/config/configuration.cpp.o
+warships: CMakeFiles/warships.dir/configuration.cpp.o
 warships: CMakeFiles/warships.dir/build.make
 warships: CMakeFiles/warships.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable warships"

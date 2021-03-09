@@ -11,6 +11,7 @@
 #include "../board/board.h"
 
 // node will represent the state of each cell in a grid.
+// TYPES include: EMPTY, HIT, MISS, CARRIER, BATTLESHIP, DESTROYER, SUBMARINE, PATROL.
 struct node {
     node(std::string type, int length);
 
@@ -23,6 +24,12 @@ struct node {
 };
 
 class board {
+private:
+public:
+    int getHeight() const;
+
+    int getWidth() const;
+
 private:
     int height{};
     int width{};

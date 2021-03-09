@@ -7,21 +7,6 @@
 #include <regex>
 #include "utils.h"
 
-std::vector<std::string> utils::split(std::string &str, const std::string &delim) {
-    std::vector<std::string> tokens;
-    size_t prev = 0, pos = 0;
-    do
-    {
-        pos = str.find(delim, prev);
-        if (pos == std::string::npos) pos = str.length();
-        std::string token = str.substr(prev, pos-prev);
-        if (!token.empty()) tokens.push_back(token);
-        prev = pos + delim.length();
-    }
-    while (pos < str.length() && prev < str.length());
-    return tokens;
-}
-
 void utils::clearBuffer() {
     std::cin.clear();
     // Clears the std::cin state to ensure future IO ops work correctly
@@ -52,19 +37,39 @@ int utils::convertAlphaToInt(std::string alpha) {
     return value;
 }
 
-std::vector<int> utils::parseCoordinates(std::string coordinatesStr) {
-    std::string tmpX;
-    std::vector<int> coord;
+std::vector<int> utils::parseCoordinates(std::string str) {
+    std::string tmp;
+    std::vector<int> items;
     int x, y;
     std::smatch match;
-    if (std::regex_search(coordinatesStr, match, coordinates)) {
+    if (std::regex_search(str, match, coordinates)) {
         x = convertAlphaToInt(match.str(1));
         y = std::stoi(match.str(2)) - 1;
     }
 
-    coord.emplace_back(x);
-    coord.emplace_back(y);
+    items.emplace_back(x);
+    items.emplace_back(y);
 //    std::cout << "x:" << x << "\ny:" << y << std::endl;
 
-    return coord;
+    return items;
 }
+
+std::vector<int> utils::parseDimensions(std::string str) {
+    std::cout << "str:" << str << std::endl;
+    std::string tmp;
+    std::vector<int> items;
+    int x, y;
+    std::smatch match;
+    bool thing = std::regex_search(str, match, boardDimensions);
+    std::cout << "match:" << thing << std::endl;
+    if (std::regex_search(str, match, boardDimensions)) {
+        std::cout << "x:" << match.str(1) << "\ny:" << match.str(2) << std::endl;
+        x = std::stoi(match.str(1));
+        y = std::stoi(match.str(2));
+    }
+
+    items.emplace_back(x);
+    items.emplace_back(y);
+    std::cout << "x:" << x << "\ny:" << y << std::endl;
+
+    return items;}

@@ -4,26 +4,27 @@
 CMakeFiles/warships.dir/board/board.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.cpp
  /Users/vuhongann/CLionProjects/warships/board/board.h
- /Users/vuhongann/CLionProjects/warships/config/configuration.h
+ /Users/vuhongann/CLionProjects/warships/configuration.h
  /Users/vuhongann/CLionProjects/warships/mini/ini.h
  /Users/vuhongann/CLionProjects/warships/player/player.h
  /Users/vuhongann/CLionProjects/warships/tabulate/tabulate.h
  /Users/vuhongann/CLionProjects/warships/utils/utils.h
-CMakeFiles/warships.dir/config/configuration.cpp.o
+CMakeFiles/warships.dir/configuration.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.h
- /Users/vuhongann/CLionProjects/warships/config/configuration.cpp
- /Users/vuhongann/CLionProjects/warships/config/configuration.h
+ /Users/vuhongann/CLionProjects/warships/configuration.cpp
+ /Users/vuhongann/CLionProjects/warships/configuration.h
  /Users/vuhongann/CLionProjects/warships/mini/ini.h
  /Users/vuhongann/CLionProjects/warships/utils/utils.h
 CMakeFiles/warships.dir/main.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.h
- /Users/vuhongann/CLionProjects/warships/config/configuration.h
+ /Users/vuhongann/CLionProjects/warships/configuration.h
  /Users/vuhongann/CLionProjects/warships/main.cpp
+ /Users/vuhongann/CLionProjects/warships/mini/ini.h
  /Users/vuhongann/CLionProjects/warships/player/player.h
  /Users/vuhongann/CLionProjects/warships/utils/utils.h
 CMakeFiles/warships.dir/player/player.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.h
- /Users/vuhongann/CLionProjects/warships/config/configuration.h
+ /Users/vuhongann/CLionProjects/warships/configuration.h
  /Users/vuhongann/CLionProjects/warships/player/player.cpp
  /Users/vuhongann/CLionProjects/warships/player/player.h
  /Users/vuhongann/CLionProjects/warships/tabulate/tabulate.h
