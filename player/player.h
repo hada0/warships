@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <regex>
+#include <iostream>
 #include "../board/board.h"
 #include "../configuration.h"
 
@@ -26,16 +27,11 @@ public:
 
     std::vector<node> shipLibrary;
 
-
     void setup();
-
-    void displayBoard();
 
     void displayLib();
 
-    std::string printCellValue(node n);
-
-//    bool placeShip(ship ship, std::string coordinates);
+    bool placeShip(node& ship, std::string coordinates);
 
 };
 

@@ -3,13 +3,14 @@
 //
 
 #include <iostream>
+#include <iomanip>
 #include "configuration.h"
 #include "mini/ini.h"
 #include "utils/utils.h"
 #include "board/board.h"
 
 void configuration::parse_config(std::string fileName) {
-    mINI::INIFile file("config.ini");
+    mINI::INIFile file("cconfig.ini");
     mINI::INIStructure ini;
     bool read = file.read(ini);
     std::cout << "read" << read << std::endl;
@@ -30,6 +31,12 @@ void configuration::parse_config(std::string fileName) {
 
     std::string aa = ini.get("configuration").get("autoplace");
     std::istringstream(aa) >> std::boolalpha >> autoplaceAll;
+
+//    std::string& thing = ini["configuration""board"];
+    std::string thing = ini["lengths"]["Carrier"];
+    std::cout << "thing: " << thing << std::endl;
+
+
 
 //    std::string b = ini.get("configuration").get("board");
 //    std::vector<int> dimensions = utils::parseDimensions(b);

@@ -11,6 +11,7 @@
 #include "../tabulate/tabulate.h"
 #include "../utils/utils.h"
 #include "../board/board.h"
+
 using Row_t = std::vector<std::variant<std::string, const char *, tabulate::Table>>;
 
 void player::setup() {
@@ -41,52 +42,31 @@ board *player::getShipsBoard() {
     return &shipsBoard;
 }
 
-void player::displayBoard() {
-    tabulate::Table grid;
-    std::vector<std::vector<node>> x = *getMovesBoard()->getGrid();
-    std::vector<node> y = getMovesBoard()->getGrid()->at(0);
-    grid.format()
-    .padding_left(1)
-    .padding_right(1)
-    .column_separator("|");
-
-    std::ostringstream stringStream;
-
-    for (std::vector<node> y : x) {
-        int count = 0;
-        std::vector<std::string> row;
-        for (node n : y) {
-            if (count == (getMovesBoard()->getWidth() - 1)) {
-                stringStream << printCellValue(n);
-            } else {
-                stringStream << printCellValue(n) << " ";
-                count++;
-            }
-        }
-        stringStream << "\n";
-    }
-
-    grid.add_row({stringStream.str()});
-    std::cout << grid.str();
-}
-
-std::string player::printCellValue(node n) {
-    if (n.type == "EMPTY") {
-        return "x";
-    } else if (n.type == "HIT") {
-        return "O";
-    } else if (n.type == "MISS") {
-        return "X";
-    } else if (n.type == "CARRIER") {
-        return "C";
-    } else if (n.type == "DESTROYER") {
-        return "D";
-    } else if (n.type == "SUBMARINE") {
-        return "S";
-    } else if (n.type == "PATROL") {
-        return "P";
-    }
-    return "!";
-}
+//bool player::placeShip(node& ship, std::string coordinatesStr) {
+//    if (!utils::validateCoordinatesFormat(coordinatesStr)) {
+//        std::cout << "Invalid coordinates format." << std::endl;
+//        return false;
+//    }
+//    if (shipsBoard.validateCoordinates(coordinatesStr)) {
+//
+//        std::vector<int> c = utils::parseCoordinates(coordinatesStr);
+//        int x = c.at(0);
+//        int y = c.at(1);
+//        std::vector<std::vector<node>> grid = *shipsBoard.getGrid();
+//        std::vector<node> &yPos = grid.at(y);
+//        std::cout << "before: " << yPos.at(x).type << std::endl;
+//        yPos.at(x) = ship;
+//        std::vector<std::vector<node>> grid2 = *shipsBoard.getGrid();
+//        std::vector<node> &yPos2 = grid.at(y);
+//
+//        std::cout << "after: " << yPos2.at(x).type << std::endl;
+////        std::cout << "after cell value: " << printCellValue(yPos2.at(x)) << std::endl;
+//        std::cout << "hey dude" << std::endl;
+////        shipsBoard.setGrid(grid2);
+////        displayBoard();
+//        return true;
+//    }
+//    return false;
+//}
 
 

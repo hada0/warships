@@ -92,6 +92,12 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.h">
 			<Option target="warships"/>
 		</Unit>
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/hey.cpp">
+			<Option target="warships"/>
+		</Unit>
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/hey.h">
+			<Option target="warships"/>
+		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">
 			<Option target="warships"/>
 		</Unit>

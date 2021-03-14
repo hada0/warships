@@ -20,25 +20,38 @@ struct node {
 
     // state is populated if it is a boat that needs to be deployed.
     bool state = 0;
+};
+
+struct ship {
+    node(std::string type, int length, int life);
+
+    std::string;
+    int length;
     int health = length;
+    bool sunk = false;
+    std::vector<std::string> coordinates;
+    // state is set to true if it has been deployed.
+    bool state = 0;
 };
 
 class board {
-private:
 public:
-    int getHeight() const;
 
-    int getWidth() const;
 
 private:
     int height{};
     int width{};
+    std::vector<std::vector<node>> grid;
+
 public:
     board(int height, int width);
 
-private:
-    std::vector<std::vector<node>> grid;
-public:
+    int getHeight() const;
+
+    int getWidth() const;
+
+    void setGrid(const std::vector<std::vector<node>> &grid);
+
     const std::vector<std::vector<node>> *getGrid() const;
 
     //    bool validate(std::string dimensions);
@@ -48,6 +61,12 @@ public:
     std::string getNodeStateAtCoordinates(int x, int y);
 
     bool validateCoordinates(std::string coordinatesStr);
+
+    void displayBoard();
+
+    std::string printCellValue(node& n);
+
+    void placeNode(node& n, std::string coordinateStr);
 
 };
 

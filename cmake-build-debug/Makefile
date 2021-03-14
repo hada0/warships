@@ -177,6 +177,33 @@ configuration.cpp.s:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.s
 .PHONY : configuration.cpp.s
 
+hey.o: hey.cpp.o
+
+.PHONY : hey.o
+
+# target to build an object file
+hey.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/hey.cpp.o
+.PHONY : hey.cpp.o
+
+hey.i: hey.cpp.i
+
+.PHONY : hey.i
+
+# target to preprocess a source file
+hey.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/hey.cpp.i
+.PHONY : hey.cpp.i
+
+hey.s: hey.cpp.s
+
+.PHONY : hey.s
+
+# target to generate assembly for a file
+hey.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/hey.cpp.s
+.PHONY : hey.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -273,6 +300,9 @@ help:
 	@echo "... configuration.o"
 	@echo "... configuration.i"
 	@echo "... configuration.s"
+	@echo "... hey.o"
+	@echo "... hey.i"
+	@echo "... hey.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

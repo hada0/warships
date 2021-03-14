@@ -15,9 +15,14 @@ CMakeFiles/warships.dir/configuration.cpp.o
  /Users/vuhongann/CLionProjects/warships/configuration.h
  /Users/vuhongann/CLionProjects/warships/mini/ini.h
  /Users/vuhongann/CLionProjects/warships/utils/utils.h
+CMakeFiles/warships.dir/hey.cpp.o
+ /Users/vuhongann/CLionProjects/warships/hey.cpp
+ /Users/vuhongann/CLionProjects/warships/hey.h
+ /Users/vuhongann/CLionProjects/warships/mini/ini.h
 CMakeFiles/warships.dir/main.cpp.o
  /Users/vuhongann/CLionProjects/warships/board/board.h
  /Users/vuhongann/CLionProjects/warships/configuration.h
+ /Users/vuhongann/CLionProjects/warships/hey.h
  /Users/vuhongann/CLionProjects/warships/main.cpp
  /Users/vuhongann/CLionProjects/warships/mini/ini.h
  /Users/vuhongann/CLionProjects/warships/player/player.h
