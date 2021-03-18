@@ -24,10 +24,6 @@ vector
 board/board.h
 /Users/vuhongann/CLionProjects/warships/board/board.h
 
-/Users/vuhongann/CLionProjects/warships/hey.h
-mini/ini.h
-/Users/vuhongann/CLionProjects/warships/mini/ini.h
-
 /Users/vuhongann/CLionProjects/warships/main.cpp
 iostream
 -
@@ -39,10 +35,6 @@ utils/utils.h
 /Users/vuhongann/CLionProjects/warships/utils/utils.h
 mini/ini.h
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
-board/board.h
-/Users/vuhongann/CLionProjects/warships/board/board.h
-hey.h
-/Users/vuhongann/CLionProjects/warships/hey.h
 
 /Users/vuhongann/CLionProjects/warships/mini/ini.h
 string

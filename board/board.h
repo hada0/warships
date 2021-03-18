@@ -13,19 +13,16 @@
 // node will represent the state of each cell in a grid.
 // TYPES include: EMPTY, HIT, MISS, CARRIER, BATTLESHIP, DESTROYER, SUBMARINE, PATROL.
 struct node {
-    node(std::string type, int length);
+    node(std::string type, int length) : type(type), length(length) {}
 
     std::string type = "EMPTY";
     int length = 1;
-
-    // state is populated if it is a boat that needs to be deployed.
-    bool state = 0;
 };
 
 struct ship {
-    node(std::string type, int length, int life);
+    ship(const std::string &type, int length) : type(type), length(length) {}
 
-    std::string;
+    std::string type;
     int length;
     int health = length;
     bool sunk = false;
@@ -60,13 +57,13 @@ public:
 
     std::string getNodeStateAtCoordinates(int x, int y);
 
-    bool validateCoordinates(std::string coordinatesStr);
+    bool validatePlacement(ship s, std::string coordinatesStr, int direction);
 
     void displayBoard();
 
     std::string printCellValue(node& n);
 
-    void placeNode(node& n, std::string coordinateStr);
+    void placeNode(node& n, std::string coordinateStr, int direction);
 
 };
 

@@ -99,21 +99,21 @@ void configuration::default_config() {
     height = 8;
     width = 8;
 
-    shipLibrary.emplace_back("CARRIER", 5);
-    shipLibrary.emplace_back("CARRIER", 5);
-    shipLibrary.emplace_back("BATTLESHIP", 4);
-    shipLibrary.emplace_back("BATTLESHIP", 4);
+//    shipLibrary.emplace_back("CARRIER", 5);
+//    shipLibrary.emplace_back("CARRIER", 5);
+//    shipLibrary.emplace_back("BATTLESHIP", 4);
+//    shipLibrary.emplace_back("BATTLESHIP", 4);
+//    shipLibrary.emplace_back("DESTROYER", 3);
     shipLibrary.emplace_back("DESTROYER", 3);
-    shipLibrary.emplace_back("DESTROYER", 3);
-    shipLibrary.emplace_back("SUBMARINE", 3);
-    shipLibrary.emplace_back("SUBMARINE", 3);
-    shipLibrary.emplace_back("PATROL", 2);
+//    shipLibrary.emplace_back("SUBMARINE", 3);
+//    shipLibrary.emplace_back("SUBMARINE", 3);
+//    shipLibrary.emplace_back("PATROL", 2);
     shipLibrary.emplace_back("PATROL", 2);
 }
 
 configuration::configuration() = default;
 
-std::vector<node> &configuration::getShipLibrary() {
+std::vector<ship> &configuration::getShipLibrary() {
     return shipLibrary;
 }
 

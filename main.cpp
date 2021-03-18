@@ -3,8 +3,6 @@
 #include "player/player.h"
 #include "utils/utils.h"
 #include "mini/ini.h"
-#include "board/board.h"
-#include "hey.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -17,38 +15,38 @@ int main() {
 
     player p1(gameConfig);
     p1.setup();
-//
+
     p1.displayLib();
 
-//    for (ship s : p1.shipLibrary) {
-//        std::string inputCoordinates;
-//        do {
-//            utils::clearBuffer();
-//            std::cout << "Please enter the coordinates where you would like to place a " << s.type << "? " << std::endl;
-//            std::cin >> inputCoordinates;
-//        } while (!utils::validateCoordinatesFormat(inputCoordinates));
-//
-//
-//
-//    }
-//    auto ref = p1.getMovesBoard()->getGrid();
+    for (ship &s : p1.shipLibrary) {
+//        utils::clearBuffer();
+        std::string inputCoordinates;
+        int inputDirection;
+        do {
+            std::cout << "Please enter the coordinates where you would like to place a " << s.type << "? " << std::endl;
+            std::cin >> inputCoordinates;
+            std::cout << "What direction would you like to place this? Enter 1 for horizontal or 2 for vertical. " << std::endl;
+            std::cin >> inputDirection;
+        } while (!(utils::validateCoordinatesFormat(inputCoordinates)) || !(utils::validateDirection(inputDirection)) || !(p1.getShipsBoard()->validatePlacement(s, inputCoordinates, inputDirection)));
 
-//    for (std::vector<node> i : *p1.getMovesBoard()->getGrid()) {
-//        std::cout << "thing\n";
-//    }
-//
-//    std::string n = p1.getMovesBoard()->getNodeStateAtCoordinates(2,2);
-//    bool m = p1.getMovesBoard()->validateCoordinates("B3");
-//    std::cout << "nodestate" << m << std::endl;
-//
-//    node *p = new node("PATROL", 2);
+        std::cout << "Valid placement: " << p1.getShipsBoard()->validatePlacement(s, inputCoordinates, inputDirection)<< std::endl;
 
+        node n(s.type, s.length);
+        std::cout << "ship type: " << s.type;
+        p1.getShipsBoard()->placeNode(n, inputCoordinates, inputDirection);
+        s.state = true;
+        p1.displayLib();
+        p1.getShipsBoard()->displayBoard();
+    }
+
+    p1.displayLib();
 
 
     node p("PATROL", 2);
 
-    p1.getShipsBoard()->placeNode(p, "B2");
-    p1.getShipsBoard()->displayBoard();
+//    p1.getShipsBoard()->placeNode(p, "B2");
+
+    utils::getCoordinatesList(4, "B1", 1);
 
     std::cout << "Bye, World!" << std::endl;
 

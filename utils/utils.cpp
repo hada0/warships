@@ -47,8 +47,8 @@ std::vector<int> utils::parseCoordinates(std::string str) {
         y = std::stoi(match.str(2)) - 1;
     }
 
-    items.emplace_back(x);
-    items.emplace_back(y);
+    items.push_back(x);
+    items.push_back(y);
 //    std::cout << "x:" << x << "\ny:" << y << std::endl;
 
     return items;
@@ -73,3 +73,33 @@ std::vector<int> utils::parseDimensions(std::string str) {
     std::cout << "x:" << x << "\ny:" << y << std::endl;
 
     return items;}
+
+bool utils::validateDirection(int input) {
+    if (input != 1 && input !=2) {
+        std::cout << "Invalid direction entered. Input must be 1 or 2." << std::endl;
+        return false;
+    }
+    return true;
+}
+
+std::vector<std::string> utils::getCoordinatesList(int shipLength, std::string coordinates, int direction) {
+    std::vector<std::string> coordinatesList;
+    std::vector<int> headCoordinates = parseCoordinates(coordinates);
+    int x = headCoordinates.at(0);
+    int y = headCoordinates.at(1) + 1;
+    for (int i = 0; i < shipLength; i++) {
+        int newX, newY;
+        // if the direction is horizontal
+        if (direction == 1) {
+            newX = x + i;
+            newY = y;
+        } else {
+            newX = x;
+            newY = y + i;
+        }
+        std::string xAlpha = headerAlphas.at(newX);
+        std::string newCoordinates = xAlpha + std::to_string(newY);
+        coordinatesList.push_back(newCoordinates);
+    }
+    return coordinatesList;
+}

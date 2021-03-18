@@ -12,8 +12,6 @@
 #include "../mini/ini.h"
 #include "../utils/utils.h"
 
-node::node(std::string type, int length) : type(type), length(length) {}
-
 void board::createBoard() {
     for (int i = 0; i < height; i++) {
         std::vector<node> rows;
@@ -25,11 +23,8 @@ void board::createBoard() {
 }
 
 std::string board::getNodeStateAtCoordinates(int x, int y) {
-    std::vector<node> row;
-    row = getGrid()->at(x);
-    node column = row.at(y);
-    std::cout << "hello "<< std::endl;
-    return column.type;
+    std::cout << "hello this is grid node state " << grid.at(y).at(x).type << std::endl;
+    return grid.at(y).at(x).type;
 }
 
 const std::vector<std::vector<node>> *board::getGrid() const {
@@ -37,18 +32,6 @@ const std::vector<std::vector<node>> *board::getGrid() const {
 }
 
 board::board(int height, int width) : height(height), width(width) {}
-
-
-bool board::validateCoordinates(std::string coordinatesStr) {
-    std::cout << coordinatesStr << "hi" << std::endl;
-    std::vector<int> c = utils::parseCoordinates(coordinatesStr);
-    std::cout << "bi" << std::endl;
-
-    int x = c.at(0);
-    int y = c.at(1);
-    std::cout << "x :" << x << " y : " << y << std::endl;
-    return(getNodeStateAtCoordinates(x, y) == "EMPTY");
-}
 
 int board::getHeight() const {
     return height;
@@ -65,7 +48,6 @@ void board::setGrid(const std::vector<std::vector<node>> &grid) {
 void board::displayBoard() {
     tabulate::Table outputGrid;
     std::vector<std::vector<node>> myGrid = grid;
-//    std::vector<node> x = getGrid()->at(0);
 
     outputGrid.format()
     .padding_left(1)
@@ -90,7 +72,6 @@ void board::displayBoard() {
         int count = 0;
         std::vector<std::string> row;
         for (int j = 0; j < myGrid.at(i).size(); j++) {
-//            std::cout << printCellValue(mx.at(j)) << std::endl;
             if (count == 0) {
                 stringStream << i + 1 << " ";
             }
@@ -117,6 +98,8 @@ std::string board::printCellValue(node& n) {
         return "X";
     } else if (n.type == "CARRIER") {
         return "C";
+    } else if (n.type == "BATTLESHIP") {
+        return "B";
     } else if (n.type == "DESTROYER") {
         return "D";
     } else if (n.type == "SUBMARINE") {
@@ -127,10 +110,36 @@ std::string board::printCellValue(node& n) {
     return "!";
 }
 
-void board::placeNode(node& n, std::string coordinatesStr) {
-    std::vector<int> c = utils::parseCoordinates(coordinatesStr);
-    int x = c.at(0);
-    int y = c.at(1);
-//    std::cout << "(X, Y): " << x << "," << y << std::endl;
-    grid.at(y).at(x) = n;
+
+bool board::validatePlacement(ship s, std::string coordinatesStr, int direction) {
+    std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, coordinatesStr, direction);
+    for (int i = 0; i < coordinatesList.size(); i++) {
+        int currentX = utils::parseCoordinates(coordinatesList.at(i)).at(0);
+        int currentY = utils::parseCoordinates(coordinatesList.at(i)).at(1);
+//        std::cout << "current x: " << currentX << std::endl;
+//        std::cout << "current y: " << currentY << std::endl;
+        if (currentX >= width || currentY >= height) {
+            std::cout << "Coordinates fall out of range. Please try again." << std::endl;
+            return false;
+        }
+        if (!(getNodeStateAtCoordinates(currentX, currentY) == "EMPTY") ||
+            currentX > width || currentY > height) {
+            std::cout << "Coordinates already occupied. Please try again." << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+void board::placeNode(node& n, std::string coordinatesStr, int direction) {
+    ship s(n.type, n.length);
+    std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, coordinatesStr, direction);
+    for (std::string coord : coordinatesList) {
+        std::vector<int> c = utils::parseCoordinates(coord);
+        int x = c.at(0);
+        int y = c.at(1);
+        std::cout << "(X, Y): " << x << "," << y << std::endl;
+        grid.at(y).at(x) = n;
+        std::cout << "after node statE: " << getNodeStateAtCoordinates(x, y) << std::endl;
+    }
 }

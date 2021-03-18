@@ -22,10 +22,10 @@ public:
     int getWidth() const;
 
 public:
-    std::vector<node> & getShipLibrary();
+    std::vector<ship> & getShipLibrary();
 
 private:
-    std::vector<node> shipLibrary;
+    std::vector<ship> shipLibrary;
 
 public:
     configuration();

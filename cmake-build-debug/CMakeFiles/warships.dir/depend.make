@@ -15,13 +15,8 @@ CMakeFiles/warships.dir/configuration.cpp.o: ../configuration.h
 CMakeFiles/warships.dir/configuration.cpp.o: ../mini/ini.h
 CMakeFiles/warships.dir/configuration.cpp.o: ../utils/utils.h
 
-CMakeFiles/warships.dir/hey.cpp.o: ../hey.cpp
-CMakeFiles/warships.dir/hey.cpp.o: ../hey.h
-CMakeFiles/warships.dir/hey.cpp.o: ../mini/ini.h
-
 CMakeFiles/warships.dir/main.cpp.o: ../board/board.h
 CMakeFiles/warships.dir/main.cpp.o: ../configuration.h
-CMakeFiles/warships.dir/main.cpp.o: ../hey.h
 CMakeFiles/warships.dir/main.cpp.o: ../main.cpp
 CMakeFiles/warships.dir/main.cpp.o: ../mini/ini.h
 CMakeFiles/warships.dir/main.cpp.o: ../player/player.h

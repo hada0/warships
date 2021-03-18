@@ -24,7 +24,10 @@ public:
     static void clearConsole();
     static void clearBuffer();
     static bool validateCoordinatesFormat(std::string coordinatesStr);
+    static bool validateDirection(int input);
     static std::vector<int> parseDimensions(std::string str);
     static std::vector<int> parseCoordinates(std::string str);
     static int convertAlphaToInt(std::string alpha);
+    // Returns a list of coordinates that will be occupied with the given ship.
+    static std::vector<std::string> getCoordinatesList(int shipLength, std::string coordinates, int direction);
 };
