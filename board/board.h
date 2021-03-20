@@ -65,6 +65,8 @@ public:
 
     void placeNode(node& n, std::string coordinateStr, int direction);
 
+    void autoPlace(ship s);
+
 };
 
 #endif //WARSHIPS_BOARD_H

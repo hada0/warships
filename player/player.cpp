@@ -42,4 +42,9 @@ board *player::getShipsBoard() {
     return &shipsBoard;
 }
 
+void player::resetShipsboard() {
+    shipsBoard = board(config.getHeight(), config.getWidth());
+    shipsBoard.createBoard();
+}
+
 

@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <regex>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 #include "utils.h"
 
 void utils::clearBuffer() {
@@ -14,7 +16,7 @@ void utils::clearBuffer() {
     // Clears the cin buffer including new lines or additional characters
 }
 
-void clearConsole() {
+void utils::clearConsole() {
     std::cout << "\x1B[2J\x1B[H";
 }
 
@@ -102,4 +104,13 @@ std::vector<std::string> utils::getCoordinatesList(int shipLength, std::string c
         coordinatesList.push_back(newCoordinates);
     }
     return coordinatesList;
+}
+
+std::string utils::generateRandomCoordinates(int xLimit, int yLimit) {
+    srand(time(NULL));
+    std::string randX = headerAlphas.at(rand() % xLimit);
+    int randY = rand() % yLimit;
+
+    return randX + std::to_string(randY);
+
 }

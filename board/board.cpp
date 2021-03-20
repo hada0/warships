@@ -23,7 +23,6 @@ void board::createBoard() {
 }
 
 std::string board::getNodeStateAtCoordinates(int x, int y) {
-    std::cout << "hello this is grid node state " << grid.at(y).at(x).type << std::endl;
     return grid.at(y).at(x).type;
 }
 
@@ -119,12 +118,12 @@ bool board::validatePlacement(ship s, std::string coordinatesStr, int direction)
 //        std::cout << "current x: " << currentX << std::endl;
 //        std::cout << "current y: " << currentY << std::endl;
         if (currentX >= width || currentY >= height) {
-            std::cout << "Coordinates fall out of range. Please try again." << std::endl;
+//            std::cout << "Coordinates fall out of range. Please try again." << std::endl;
             return false;
         }
         if (!(getNodeStateAtCoordinates(currentX, currentY) == "EMPTY") ||
             currentX > width || currentY > height) {
-            std::cout << "Coordinates already occupied. Please try again." << std::endl;
+//            std::cout << "Coordinates already occupied. Please try again." << std::endl;
             return false;
         }
     }
@@ -138,8 +137,16 @@ void board::placeNode(node& n, std::string coordinatesStr, int direction) {
         std::vector<int> c = utils::parseCoordinates(coord);
         int x = c.at(0);
         int y = c.at(1);
-        std::cout << "(X, Y): " << x << "," << y << std::endl;
         grid.at(y).at(x) = n;
-        std::cout << "after node statE: " << getNodeStateAtCoordinates(x, y) << std::endl;
     }
+}
+
+void board::autoPlace(ship s) {
+    std::string randCoord = utils::generateRandomCoordinates(width, height);
+    int randDir = rand() % 2 + 1;
+    while (!validatePlacement(s, randCoord, randDir)) {
+        randCoord = utils::generateRandomCoordinates(width, height);
+    }
+    node n(s.type, s.length);
+    placeNode(n, randCoord, randDir);
 }

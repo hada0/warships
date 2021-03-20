@@ -30,4 +30,5 @@ public:
     static int convertAlphaToInt(std::string alpha);
     // Returns a list of coordinates that will be occupied with the given ship.
     static std::vector<std::string> getCoordinatesList(int shipLength, std::string coordinates, int direction);
+    static std::string generateRandomCoordinates(int xLimit, int yLimit);
 };

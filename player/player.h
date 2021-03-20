@@ -33,6 +33,8 @@ public:
 
     bool placeShip(node& ship, std::string coordinates);
 
+    void resetShipsboard();
+
 };
 
 #endif //WARSHIPS_PLAYER_H
