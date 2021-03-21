@@ -59,7 +59,7 @@ public:
 
     bool validatePlacement(ship s, std::string coordinatesStr, int direction);
 
-    void displayBoard();
+    void displayBoard(std::string playerName);
 
     std::string printCellValue(node& n);
 

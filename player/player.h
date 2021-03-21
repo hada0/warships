@@ -14,11 +14,12 @@
 
 class player {
 private:
+    std::string name;
     configuration config;
-    board movesBoard = board(config.getHeight(), config.getWidth());
+    board targetBoard = board(config.getHeight(), config.getWidth());
     board shipsBoard = board(config.getHeight(), config.getWidth());
 public:
-    board *getMovesBoard();
+    board *getTargetBoard();
 
     board *getShipsBoard();
 
@@ -31,9 +32,14 @@ public:
 
     void displayLib();
 
-    bool placeShip(node& ship, std::string coordinates);
-
     void resetShipsboard();
+
+    void autoplaceRemaining();
+
+    bool validateFire(board &opponentShipBoard, std::string targetCoordinates);
+
+    void fire(board &opponentShipBoard, std::string targetCoordinates);
+
 
 };
 

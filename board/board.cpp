@@ -44,11 +44,11 @@ void board::setGrid(const std::vector<std::vector<node>> &grid) {
     board::grid = grid;
 }
 
-void board::displayBoard() {
-    tabulate::Table outputGrid;
-    std::vector<std::vector<node>> myGrid = grid;
+void board::displayBoard(std::string name) {
+    tabulate::Table shipsGrid;
+    std::vector<std::vector<node>> myShipGrid = grid;
 
-    outputGrid.format()
+    shipsGrid.format()
     .padding_left(1)
     .padding_right(1)
     .column_separator("|");
@@ -67,34 +67,36 @@ void board::displayBoard() {
         }
     }
 
-    for (int i = 0; i < myGrid.size(); i++) {
+    for (int i = 0; i < myShipGrid.size(); i++) {
         int count = 0;
         std::vector<std::string> row;
-        for (int j = 0; j < myGrid.at(i).size(); j++) {
+        for (int j = 0; j < myShipGrid.at(i).size(); j++) {
             if (count == 0) {
                 stringStream << i + 1 << " ";
             }
             if (count == (numOfColumns - 1)) {
-                stringStream << printCellValue(myGrid.at(i).at(j));
+                stringStream << printCellValue(myShipGrid.at(i).at(j));
             } else {
-                stringStream << printCellValue(myGrid.at(i).at(j)) << " ";
+                stringStream << printCellValue(myShipGrid.at(i).at(j)) << " ";
                 count++;
             }
         }
         stringStream << "\n";
     }
-    outputGrid.add_row({headers.str()});
-    outputGrid.add_row({stringStream.str()});
-    std::cout << outputGrid.str() << std::endl;
+    shipsGrid.add_row({name + "board"});
+    shipsGrid.add_row({headers.str()});
+    shipsGrid.add_row({stringStream.str()});
+    std::cout << shipsGrid.str() << std::endl;
+
 }
 
 std::string board::printCellValue(node& n) {
     if (n.type == "EMPTY") {
         return "x";
     } else if (n.type == "HIT") {
-        return "O";
+        return "H";
     } else if (n.type == "MISS") {
-        return "X";
+        return "M";
     } else if (n.type == "CARRIER") {
         return "C";
     } else if (n.type == "BATTLESHIP") {
