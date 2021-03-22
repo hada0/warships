@@ -28,7 +28,7 @@ public:
 
     std::vector<ship> shipLibrary;
 
-    int shipCount;
+    int remainingOpponentShips;
 
     void setup();
 

@@ -20,6 +20,12 @@ void utils::clearConsole() {
     std::cout << "\x1B[2J\x1B[H";
 }
 
+std::string utils::coordinatesToUpper(std::string coordinatesStr) {
+    std::string str;
+    for( char& c : coordinatesStr ) str.push_back(std::toupper(c));
+    return str;
+}
+
 bool utils::validateCoordinatesFormat(std::string coordinatesStr) {
     return std::regex_match(coordinatesStr, coordinates);
 }
@@ -27,14 +33,9 @@ bool utils::validateCoordinatesFormat(std::string coordinatesStr) {
 int utils::convertAlphaToInt(std::string alpha) {
     int value = 0;
     std::string str;
-    const std::string alphas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for( char& c : alpha ) str = std::toupper(c);
-    for (char& c : str) {
-        const auto pos = alphas.find(c);
-        if (pos != std::string::npos) {
-            value = pos;
-            break;
-        }
+    auto it = std::find(headerAlphas.begin(), headerAlphas.end(), alpha);
+    if (it != headerAlphas.end()) {
+        value = it - headerAlphas.begin();
     }
     return value;
 }
@@ -48,11 +49,8 @@ std::vector<int> utils::parseCoordinates(std::string str) {
         x = convertAlphaToInt(match.str(1));
         y = std::stoi(match.str(2)) - 1;
     }
-
     items.push_back(x);
     items.push_back(y);
-//    std::cout << "x:" << x << "\ny:" << y << std::endl;
-
     return items;
 }
 

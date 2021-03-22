@@ -18,7 +18,7 @@ void player::setup() {
     targetBoard.createBoard();
     shipsBoard.createBoard();
     shipLibrary = config.getShipLibrary();
-    shipCount = shipLibrary.size();
+    remainingOpponentShips = shipLibrary.size();
 }
 
 void player::displayLib() {
@@ -93,6 +93,9 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
             (nodeStateAtCoordinates == "PATROL")) {
         for (ship &s : opponentShipLibrary) {
             for (std::string c : s.coordinates) {
+                std::cout << "COORDINATES LIST NOT EMPTY" << std::endl;
+                std::cout << "COORDINATES / TARGET COORDINATES / CONVERTED TARGET" << c << " / " << targetCoordinates << " / " << utils::coordinatesToUpper(targetCoordinates) << std::endl;
+
                 if (c == targetCoordinates) {
                     s.health--;
                     hit = 1;
@@ -100,6 +103,7 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
                     if (s.health == 0) {
                         s.sunk = true;
                         sunk = true;
+                        remainingOpponentShips--;
                     }
                     goto endOfFire;
                 }

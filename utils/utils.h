@@ -5,6 +5,7 @@
 #include <vector>
 #include <regex>
 
+
 #ifndef WARSHIPS_HELPER_H
 #define WARSHIPS_HELPER_H
 
@@ -23,6 +24,7 @@ class utils {
 public:
     static void clearConsole();
     static void clearBuffer();
+    static std::string coordinatesToUpper(std::string coordinatesStr);
     static bool validateCoordinatesFormat(std::string coordinatesStr);
     static bool validateDirection(int input);
     static std::vector<int> parseDimensions(std::string str);

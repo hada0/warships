@@ -141,8 +141,5 @@ void board::placeNode(node& n, std::string coordinatesStr, int direction) {
         int y = c.at(1);
         grid.at(y).at(x) = n;
     }
-    if ((n.type != "HIT") && (n.type != "MISS")) {
-
-    }
 }
 
