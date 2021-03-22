@@ -44,7 +44,7 @@ void board::setGrid(const std::vector<std::vector<node>> &grid) {
     board::grid = grid;
 }
 
-void board::displayBoard(std::string name) {
+void board::displayBoard(std::string title) {
     tabulate::Table shipsGrid;
     std::vector<std::vector<node>> myShipGrid = grid;
 
@@ -83,7 +83,7 @@ void board::displayBoard(std::string name) {
         }
         stringStream << "\n";
     }
-    shipsGrid.add_row({name + "board"});
+    shipsGrid.add_row({title});
     shipsGrid.add_row({headers.str()});
     shipsGrid.add_row({stringStream.str()});
     std::cout << shipsGrid.str() << std::endl;
@@ -141,14 +141,8 @@ void board::placeNode(node& n, std::string coordinatesStr, int direction) {
         int y = c.at(1);
         grid.at(y).at(x) = n;
     }
+    if ((n.type != "HIT") && (n.type != "MISS")) {
+
+    }
 }
 
-void board::autoPlace(ship s) {
-    std::string randCoord = utils::generateRandomCoordinates(width, height);
-    int randDir = rand() % 2 + 1;
-    while (!validatePlacement(s, randCoord, randDir)) {
-        randCoord = utils::generateRandomCoordinates(width, height);
-    }
-    node n(s.type, s.length);
-    placeNode(n, randCoord, randDir);
-}

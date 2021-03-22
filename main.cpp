@@ -20,7 +20,9 @@ int main() {
 
     std::string inputCoordinates;
     int inputDirection;
+    std::string playerConfirmation;
 
+////////////////////////////////////////////////////// GAME SETUP /////////////////////////////////////////////////////
     regularPlace:
         for (ship &s : p1.shipLibrary) {
             do {
@@ -57,39 +59,61 @@ int main() {
                      || !(p1.getShipsBoard()->validatePlacement(s, inputCoordinates, inputDirection)));
 
             node n(s.type, s.length);
+            p1.addCoordinatesListToShipLibrary(s, inputCoordinates, inputDirection);
             p1.getShipsBoard()->placeNode(n, inputCoordinates, inputDirection);
             s.state = true;
             utils::clearConsole();
-            p1.getShipsBoard()->displayBoard("Player 1 Ships");
-            p1.getTargetBoard()->displayBoard("Player 1 Target");
-            p1.displayLib();
+            p1.displayPlayerBoards("PLAYER 1");
         }
 
     autoplace:
         p1.autoplaceRemaining();
-        p1.getShipsBoard()->displayBoard("Player 1 Ships");
-        p1.getTargetBoard()->displayBoard("Player 1 Target");
-        p1.displayLib();
+        p1.displayPlayerBoards("PLAYER 1");
 
+
+    do {
+        std::cout << "Are you happy to continue with your current ship placement? Enter Y for yes, N to reset board and re-place ships." << std::endl;
+        std::cin >> playerConfirmation;
+        std::cout << "Your answer: " << playerConfirmation << std::endl;
+        if (!(playerConfirmation == "Y" || playerConfirmation == "y" || playerConfirmation == "N" || playerConfirmation == "n")) {
+            std::cout << "Invalid option entered. Please try again." << std::endl;
+        }
+        if (playerConfirmation == "N" || playerConfirmation == "n") {
+            p1.resetShipsboard();
+            goto regularPlace;
+        }
+    } while (!(playerConfirmation == "Y" || playerConfirmation == "y" || playerConfirmation == "N" || playerConfirmation == "n"));
 
     p2.autoplaceRemaining();
-    p2.getShipsBoard()->displayBoard("Computer Ships");
-    p2.getTargetBoard()->displayBoard("Computer Target");
-    p2.displayLib();
-
-//    ship s("PATROL", 2);
+    p2.displayPlayerBoards("COMPUTER");
 
 
-    std::cout<<utils::generateRandomCoordinates(8,8) << std::endl;
+////////////////////////////////////////////////////// GAME START /////////////////////////////////////////////////////
 
+    std::string targetCoordinates;
+    playerOneTurn:
+        std::cout << "It's your turn. Enter coordinates to target:" << std::endl;
+        std::cin >> targetCoordinates;
+        if (!utils::validateCoordinatesFormat(targetCoordinates)) {
+            std::cout << "Invalid coordinates format. Please try again." << std::endl;
+            goto playerOneTurn;
+        }
+        if (!p1.validateFire(targetCoordinates)) {
+            std::cout << "Invalid target. Coordinates has been hit previously." << std::endl;
+            goto playerOneTurn;
+        }
+        p1.fire(*p2.getShipsBoard(), p2.shipLibrary, targetCoordinates);
+        p1.displayPlayerBoards("PLAYER 1");
 
-    node p("PATROL", 2);
-
-//    p1.getShipsBoard()->placeNode(p, "B2");
-
-    utils::getCoordinatesList(4, "B1", 1);
-
-    std::cout << "Bye, World!" << std::endl;
+    if (p1.shipCount != 0) {
+         goto playerOneTurn;
+    }
+//    ComputerTurn:
+//        std::cout << "It's Computer's turn." << std::endl;
+//        do {targetCoordinates = utils::generateRandomCoordinates(p2.getShipsBoard()->getWidth(), p2.getShipsBoard()->getHeight());
+//        } while(!p1.validateFire(*p2.getShipsBoard(), targetCoordinates));
+//
+//    std::cout << "Bye, World!" << std::endl;
 
     return 0;
 }

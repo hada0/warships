@@ -28,6 +28,8 @@ public:
 
     std::vector<ship> shipLibrary;
 
+    int shipCount;
+
     void setup();
 
     void displayLib();
@@ -36,11 +38,15 @@ public:
 
     void autoplaceRemaining();
 
-    bool validateFire(board &opponentShipBoard, std::string targetCoordinates);
+    bool validateFire(std::string targetCoordinates);
 
-    void fire(board &opponentShipBoard, std::string targetCoordinates);
+    void autoplace(ship &s);
 
+    void fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibrary, std::string targetCoordinates);
 
+    void displayPlayerBoards(std::string playerName);
+
+    void addCoordinatesListToShipLibrary(ship &s, std::string headCoordinates, int direction);
 };
 
 #endif //WARSHIPS_PLAYER_H

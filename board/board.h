@@ -25,7 +25,7 @@ struct ship {
     std::string type;
     int length;
     int health = length;
-    bool sunk = false;
+    bool sunk;
     std::vector<std::string> coordinates;
     // state is set to true if it has been deployed.
     bool state = 0;
@@ -59,13 +59,11 @@ public:
 
     bool validatePlacement(ship s, std::string coordinatesStr, int direction);
 
-    void displayBoard(std::string playerName);
+    void displayBoard(std::string title);
 
     std::string printCellValue(node& n);
 
     void placeNode(node& n, std::string coordinateStr, int direction);
-
-    void autoPlace(ship s);
 
 };
 
