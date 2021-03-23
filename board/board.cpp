@@ -12,6 +12,16 @@
 #include "../mini/ini.h"
 #include "../utils/utils.h"
 
+board::board(int height, int width) : height(height), width(width) {}
+
+int board::getHeight() const {
+    return height;
+}
+
+int board::getWidth() const {
+    return width;
+}
+
 void board::createBoard() {
     for (int i = 0; i < height; i++) {
         std::vector<node> rows;
@@ -24,24 +34,6 @@ void board::createBoard() {
 
 std::string board::getNodeStateAtCoordinates(int x, int y) {
     return grid.at(y).at(x).type;
-}
-
-const std::vector<std::vector<node>> *board::getGrid() const {
-    return &grid;
-}
-
-board::board(int height, int width) : height(height), width(width) {}
-
-int board::getHeight() const {
-    return height;
-}
-
-int board::getWidth() const {
-    return width;
-}
-
-void board::setGrid(const std::vector<std::vector<node>> &grid) {
-    board::grid = grid;
 }
 
 void board::displayBoard(std::string title) {
@@ -76,6 +68,7 @@ void board::displayBoard(std::string title) {
         }
     }
 
+    // Handle the contents of the board to display.
     for (int i = 0; i < myShipGrid.size(); i++) {
         int count = 0;
         std::vector<std::string> row;
@@ -124,7 +117,6 @@ std::string board::printCellValue(node& n) {
     return "!";
 }
 
-
 bool board::validatePlacement(ship s, std::string coordinatesStr, int direction) {
     std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, coordinatesStr, direction);
     for (int i = 0; i < coordinatesList.size(); i++) {
@@ -150,4 +142,3 @@ void board::placeNode(node& n, std::string coordinatesStr, int direction) {
         grid.at(y).at(x) = n;
     }
 }
-

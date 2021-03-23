@@ -1,5 +1,7 @@
 //
-// Created by HongAnn Dao on 02/03/2021.
+// Board contains attributes of the board, set from the configuration file.
+//
+// Each cell on a board is populated with a node. And each node is created based on the ships being handled.
 //
 
 #ifndef WARSHIPS_BOARD_H
@@ -10,8 +12,9 @@
 #include <vector>
 #include "../board/board.h"
 
-// node will represent the state of each cell in a grid.
+// Nodes represent the state of each cell in a grid.
 // TYPES include: EMPTY, HIT, MISS, CARRIER, BATTLESHIP, DESTROYER, SUBMARINE, PATROL.
+// Length is set to 1 if the type is HIT, MISS or EMPTY. Otherwise it is set to the length defined in the config file.
 struct node {
     node(std::string type, int length) : type(type), length(length) {}
 
@@ -19,22 +22,22 @@ struct node {
     int length = 1;
 };
 
+// Ships represent an individual ship. This stores information on the ship's type, length, health, and if the ship has
+// been sunken and/or deployed.
 struct ship {
     ship(const std::string &type, int length) : type(type), length(length) {}
 
     std::string type;
     int length;
     int health = length;
-    bool sunk = 0;
     std::vector<std::string> coordinates;
+    // sunk is set to true if the ship has been sunk.
+    bool sunk = 0;
     // state is set to true if it has been deployed.
     bool state = 0;
 };
 
 class board {
-public:
-
-
 private:
     int height{};
     int width{};
@@ -47,24 +50,23 @@ public:
 
     int getWidth() const;
 
-    void setGrid(const std::vector<std::vector<node>> &grid);
-
-    const std::vector<std::vector<node>> *getGrid() const;
-
-    //    bool validate(std::string dimensions);
-
+    // Creates a blank board and populates each cell with an EMPTY node.
     void createBoard();
 
+    // Retrieve the current node state of the cell.
     std::string getNodeStateAtCoordinates(int x, int y);
 
+    // Check placement coordinates have not been attempted before.
     bool validatePlacement(ship s, std::string coordinatesStr, int direction);
 
+    // Print the board.
     void displayBoard(std::string title);
 
+    // Print a readable format of the node onto the board.
     std::string printCellValue(node& n);
 
+    // Update the state of the node with valid coordinates.
     void placeNode(node& n, std::string coordinateStr, int direction);
-
 };
 
 #endif //WARSHIPS_BOARD_H

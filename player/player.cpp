@@ -3,14 +3,11 @@
 //
 
 #include "player.h"
-
 #include <utility>
 #include <variant>
 #include <iostream>
-
 #include "../tabulate/tabulate.h"
 #include "../utils/utils.h"
-#include "../board/board.h"
 
 using Row_t = std::vector<std::variant<std::string, const char *, tabulate::Table>>;
 
@@ -33,7 +30,6 @@ void player::displayLib() {
     std::cout << lib << std::endl;
 }
 
-
 void player::displayPlayerBoards(std::string playerName) {
     std::cout << playerName << "'s Boards" << std::endl;
     shipsBoard.displayBoard("Ships Board");
@@ -42,7 +38,6 @@ void player::displayPlayerBoards(std::string playerName) {
 }
 
 player::player(configuration config) : config(std::move(config)) {}
-
 
 board *player::getTargetBoard() {
     return &targetBoard;
@@ -91,10 +86,12 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
             (nodeStateAtCoordinates == "SUBMARINE") ||
             (nodeStateAtCoordinates == "PATROL")) {
         for (ship &s : opponentShipLibrary) {
+            // Ignore sunken ships in the library.
+            if (s.sunk) {
+                continue;
+            }
             for (std::string c : s.coordinates) {
-                std::cout << "COORDINATES LIST NOT EMPTY" << std::endl;
-                std::cout << "COORDINATES / TARGET COORDINATES / CONVERTED TARGET" << c << " / " << targetCoordinates << " / " << utils::coordinatesToUpper(targetCoordinates) << std::endl;
-
+                // Update the ship values in the player's ship library.
                 if (c == targetCoordinates) {
                     s.health--;
                     hit = 1;
@@ -109,6 +106,7 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
             }
         }
     }
+    // Update the player with the result of their shot.
     endOfFire:
         if (hit) {
             std::cout << "Success. Target hit." << std::endl;
@@ -125,7 +123,6 @@ void player::autoFire(board &opponentShipBoard, std::vector<ship> &opponentShipL
     do {
         targetCoordinates = utils::generateRandomCoordinates(targetBoard.getWidth(), targetBoard.getHeight());
     } while (!validateFire(targetCoordinates));
-
     fire(opponentShipBoard, opponentShipLibrary, targetCoordinates);
 }
 
