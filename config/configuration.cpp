@@ -95,6 +95,19 @@ void configuration::setupGameConfig() {
     patrolLength = std::stoi(iniContents.at("PatrolLength"));
     patrolQuantity = std::stoi(iniContents.at("PatrolQuantity"));
 
+    int totalShipArea =
+            (carrierQuantity * carrierLength) +
+            (battleshipQuantity * battleshipLength) +
+            (destroyerQuantity * destroyerLength) +
+            (submarineQuantity * submarineLength) +
+            (patrolQuantity * patrolQuantity);
+    int boardArea = width * height;
+
+    if (!utils::validateMaxShipsOnBoard(boardArea, totalShipArea)) {
+        std::cout << "Ships defined do not fit on the board defined. Fix and restart the game.";
+        exit(EXIT_FAILURE);
+    }
+
     addToShipLibrary("CARRIER", carrierLength, carrierQuantity);
     addToShipLibrary("BATTLESHIP", battleshipLength, battleshipQuantity);
     addToShipLibrary("DESTROYER", destroyerLength, destroyerQuantity);

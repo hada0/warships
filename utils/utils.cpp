@@ -38,7 +38,6 @@ int utils::convertAlphaToInt(std::string alpha) {
     if (it != headerAlphas.end()) {
         value = it - headerAlphas.begin();
     }
-    std::cout << "VALUE : " << value << std::endl;
     return value;
 }
 
@@ -48,18 +47,15 @@ std::vector<int> utils::parseCoordinates(std::string str) {
     int x = 0, y = 0;
     std::smatch match;
     if (std::regex_search(str, match, coordinates)) {
-        std::cout << "X1:" << x << std::endl;
         x = convertAlphaToInt(match.str(1));
         y = std::stoi(match.str(2)) - 1;
     }
     items.push_back(x);
-    std::cout << "X2:" << x << std::endl;
     items.push_back(y);
     return items;
 }
 
 std::vector<int> utils::parseDimensions(std::string str) {
-    std::cout << "str:" << str << std::endl;
     std::string tmp;
     std::vector<int> items;
     int x, y;
@@ -69,11 +65,8 @@ std::vector<int> utils::parseDimensions(std::string str) {
         x = std::stoi(match.str(1));
         y = std::stoi(match.str(2));
     }
-
     items.emplace_back(x);
     items.emplace_back(y);
-    std::cout << "x:" << x << "\ny:" << y << std::endl;
-
     return items;
 }
 
@@ -111,10 +104,7 @@ std::string utils::generateRandomCoordinates(int xLimit, int yLimit) {
     srand(time(NULL));
     std::string randX = headerAlphas.at(randomBetween19937(0, xLimit));
     int randY = randomBetween19937(1, yLimit);
-//    std::cout << "RAND Y." << randY << std::endl;
-
     return randX + std::to_string(randY);
-
 }
 
 int utils::randomBetween19937(int low, int high) {
@@ -128,4 +118,11 @@ int utils::randomBetween19937(int low, int high) {
 bool utils::validateDimensions(std::string str) {
     return std::regex_match(str, boardDimensions);
 
+}
+
+bool utils::validateMaxShipsOnBoard(int boardArea, int totalShipsArea) {
+    if (boardArea < totalShipsArea) {
+        return false;
+    }
+    return true;
 }

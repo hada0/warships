@@ -34,4 +34,5 @@ public:
     static std::vector<std::string> getCoordinatesList(int shipLength, std::string coordinates, int direction);
     static std::string generateRandomCoordinates(int xLimit, int yLimit);
     static int randomBetween19937(int low, int high);
+    static bool validateMaxShipsOnBoard(int boardArea, int totalShipsArea);
 };
