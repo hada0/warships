@@ -55,7 +55,7 @@ void board::displayBoard(std::string title) {
 
     std::ostringstream stringStream;
     std::ostringstream headers;
-    headers << "_ ";
+    headers << "_  ";
     int numOfColumns = getWidth();
 
     for (int column = 0; column < numOfColumns; column++) {
@@ -72,7 +72,12 @@ void board::displayBoard(std::string title) {
         std::vector<std::string> row;
         for (int j = 0; j < myShipGrid.at(i).size(); j++) {
             if (count == 0) {
-                stringStream << i + 1 << " ";
+                stringStream << i + 1;
+                if (i < 9) {
+                    stringStream << "  ";
+                } else {
+                    stringStream << " ";
+                }
             }
             if (count == (numOfColumns - 1)) {
                 stringStream << printCellValue(myShipGrid.at(i).at(j));
@@ -87,7 +92,6 @@ void board::displayBoard(std::string title) {
     shipsGrid.add_row({headers.str()});
     shipsGrid.add_row({stringStream.str()});
     std::cout << shipsGrid.str() << std::endl;
-
 }
 
 std::string board::printCellValue(node& n) {
@@ -117,8 +121,6 @@ bool board::validatePlacement(ship s, std::string coordinatesStr, int direction)
     for (int i = 0; i < coordinatesList.size(); i++) {
         int currentX = utils::parseCoordinates(coordinatesList.at(i)).at(0);
         int currentY = utils::parseCoordinates(coordinatesList.at(i)).at(1);
-//        std::cout << "current x: " << currentX << std::endl;
-//        std::cout << "current y: " << currentY << std::endl;
         if (currentX >= width || currentX < 0 || currentY >= height || currentY < 0) {
             return false;
         }

@@ -65,9 +65,12 @@ int main() {
                             std::cout << "GAME QUIT." << std::endl;
                             return 0;
                         }
-                        if (!utils::validateCoordinatesFormat(inputCoordinates) ||
-                            !utils::validateDirection(inputDirection)) {
-                            std::cout << "Invalid coordinates format. Please try again.." << std::endl;
+                        if (!utils::validateCoordinatesFormat(inputCoordinates)) {
+                            std::cout << "Invalid coordinates format. Please try again." << std::endl;
+                            continue;
+                        }
+                        if (!utils::validateDirection(inputDirection)) {
+                            std::cout << "Invalid direction. Please try again." << std::endl;
                             continue;
                         }
                         if (!(p1.getShipsBoard()->validatePlacement(s, inputCoordinates, inputDirection))) {
