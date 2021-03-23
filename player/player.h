@@ -9,7 +9,7 @@
 #include <regex>
 #include <iostream>
 #include "../board/board.h"
-#include "../configuration.h"
+#include "../config/configuration.h"
 
 
 class player {
@@ -43,6 +43,8 @@ public:
     void autoplace(ship &s);
 
     void fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibrary, std::string targetCoordinates);
+
+    void autoFire(board &opponentShipBoard, std::vector<ship> &opponentShipLibrary);
 
     void displayPlayerBoards(std::string playerName);
 

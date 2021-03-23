@@ -25,7 +25,7 @@ struct ship {
     std::string type;
     int length;
     int health = length;
-    bool sunk;
+    bool sunk = 0;
     std::vector<std::string> coordinates;
     // state is set to true if it has been deployed.
     bool state = 0;

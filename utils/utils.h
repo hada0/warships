@@ -5,7 +5,6 @@
 #include <vector>
 #include <regex>
 
-
 #ifndef WARSHIPS_HELPER_H
 #define WARSHIPS_HELPER_H
 
@@ -27,6 +26,7 @@ public:
     static std::string coordinatesToUpper(std::string coordinatesStr);
     static bool validateCoordinatesFormat(std::string coordinatesStr);
     static bool validateDirection(int input);
+    static bool validateDimensions(std::string str);
     static std::vector<int> parseDimensions(std::string str);
     static std::vector<int> parseCoordinates(std::string str);
     static int convertAlphaToInt(std::string alpha);

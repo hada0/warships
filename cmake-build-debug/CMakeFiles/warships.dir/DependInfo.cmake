@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/vuhongann/CLionProjects/warships/board/board.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/board/board.cpp.o"
-  "/Users/vuhongann/CLionProjects/warships/configuration.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/configuration.cpp.o"
+  "/Users/vuhongann/CLionProjects/warships/config/configuration.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/config/configuration.cpp.o"
   "/Users/vuhongann/CLionProjects/warships/main.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/main.cpp.o"
   "/Users/vuhongann/CLionProjects/warships/player/player.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/player/player.cpp.o"
   "/Users/vuhongann/CLionProjects/warships/utils/utils.cpp" "/Users/vuhongann/CLionProjects/warships/cmake-build-debug/CMakeFiles/warships.dir/utils/utils.cpp.o"

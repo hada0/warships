@@ -38,8 +38,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="warships">
-				<Option output="/Users/vuhongann/CLionProjects/warships/cmake-build-debug/warships" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/vuhongann/CLionProjects/warships/cmake-build-debug"/>
+				<Option output="/Users/vuhongann/CLionProjects/warships/warships" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vuhongann/CLionProjects/warships"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -59,8 +59,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="warships/fast">
-				<Option output="/Users/vuhongann/CLionProjects/warships/cmake-build-debug/warships" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/vuhongann/CLionProjects/warships/cmake-build-debug"/>
+				<Option output="/Users/vuhongann/CLionProjects/warships/warships" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vuhongann/CLionProjects/warships"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -86,10 +86,10 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/board/board.h">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.cpp">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/configuration.h">
+		<Unit filename="/Users/vuhongann/CLionProjects/warships/config/configuration.h">
 			<Option target="warships"/>
 		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">

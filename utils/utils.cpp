@@ -72,7 +72,8 @@ std::vector<int> utils::parseDimensions(std::string str) {
     items.emplace_back(y);
     std::cout << "x:" << x << "\ny:" << y << std::endl;
 
-    return items;}
+    return items;
+}
 
 bool utils::validateDirection(int input) {
     if (input != 1 && input !=2) {
@@ -110,5 +111,10 @@ std::string utils::generateRandomCoordinates(int xLimit, int yLimit) {
     int randY = rand() % yLimit;
 
     return randX + std::to_string(randY);
+
+}
+
+bool utils::validateDimensions(std::string str) {
+    return std::regex_match(str, boardDimensions);
 
 }

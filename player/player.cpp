@@ -80,7 +80,6 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
     bool hit;
     bool sunk;
     std::string nodeStateAtCoordinates = opponentShipBoard.getNodeStateAtCoordinates(x, y);
-    std::cout << "OPPONENT BOARD NODE STATE: " << nodeStateAtCoordinates << std::endl;
     if (nodeStateAtCoordinates == "EMPTY") {
         targetBoard.placeNode(nMiss, targetCoordinates, 1);
         hit = 0;
@@ -121,6 +120,15 @@ void player::fire(board &opponentShipBoard, std::vector<ship> &opponentShipLibra
         }
 }
 
+void player::autoFire(board &opponentShipBoard, std::vector<ship> &opponentShipLibrary) {
+    std::string targetCoordinates;
+    do {
+        targetCoordinates = utils::generateRandomCoordinates(targetBoard.getWidth(), targetBoard.getHeight());
+    } while (!validateFire(targetCoordinates));
+
+    fire(opponentShipBoard, opponentShipLibrary, targetCoordinates);
+}
+
 void player::addCoordinatesListToShipLibrary(ship &s, std::string headCoordinates, int direction) {
     std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, headCoordinates, direction);
     for (std::string c : coordinatesList) {
@@ -129,10 +137,20 @@ void player::addCoordinatesListToShipLibrary(ship &s, std::string headCoordinate
 }
 
 void player::autoplace(ship &s) {
-    std::string randCoord = utils::generateRandomCoordinates(shipsBoard.getWidth(), shipsBoard.getHeight());
+    bool isValid;
+    int count = 0;
+    std::string randCoord;
     int randDir = rand() % 2 + 1;
-    while (!shipsBoard.validatePlacement(s, randCoord, randDir)) {
+
+    while (!isValid) {
         randCoord = utils::generateRandomCoordinates(shipsBoard.getWidth(), shipsBoard.getHeight());
+        isValid = shipsBoard.validatePlacement(s, randCoord, randDir);
+        count++;
+        // Handle out of bounds exception.
+        if (count >= 10000) {
+            std::cout << "Failed to autoplace ships. Please reduce number of ships or increase grid dimensions and restart game." <<std::endl;
+            exit(EXIT_FAILURE);
+        }
     }
     std::vector<std::string> listOfCoordinates = utils::getCoordinatesList(s.length, randCoord, randDir);
     for (std::string c : listOfCoordinates) {
@@ -141,5 +159,4 @@ void player::autoplace(ship &s) {
     node n(s.type, s.length);
     shipsBoard.placeNode(n, randCoord, randDir);
 }
-
 

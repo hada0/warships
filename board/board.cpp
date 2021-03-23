@@ -119,13 +119,10 @@ bool board::validatePlacement(ship s, std::string coordinatesStr, int direction)
         int currentY = utils::parseCoordinates(coordinatesList.at(i)).at(1);
 //        std::cout << "current x: " << currentX << std::endl;
 //        std::cout << "current y: " << currentY << std::endl;
-        if (currentX >= width || currentY >= height) {
-//            std::cout << "Coordinates fall out of range. Please try again." << std::endl;
+        if (currentX >= width || currentX < 0 || currentY >= height || currentY < 0) {
             return false;
         }
-        if (!(getNodeStateAtCoordinates(currentX, currentY) == "EMPTY") ||
-            currentX > width || currentY > height) {
-//            std::cout << "Coordinates already occupied. Please try again." << std::endl;
+        if (!(getNodeStateAtCoordinates(currentX, currentY) == "EMPTY")) {
             return false;
         }
     }

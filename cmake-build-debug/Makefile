@@ -150,32 +150,32 @@ board/board.cpp.s:
 	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/board/board.cpp.s
 .PHONY : board/board.cpp.s
 
-configuration.o: configuration.cpp.o
+config/configuration.o: config/configuration.cpp.o
 
-.PHONY : configuration.o
+.PHONY : config/configuration.o
 
 # target to build an object file
-configuration.cpp.o:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.o
-.PHONY : configuration.cpp.o
+config/configuration.cpp.o:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.o
+.PHONY : config/configuration.cpp.o
 
-configuration.i: configuration.cpp.i
+config/configuration.i: config/configuration.cpp.i
 
-.PHONY : configuration.i
+.PHONY : config/configuration.i
 
 # target to preprocess a source file
-configuration.cpp.i:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.i
-.PHONY : configuration.cpp.i
+config/configuration.cpp.i:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.i
+.PHONY : config/configuration.cpp.i
 
-configuration.s: configuration.cpp.s
+config/configuration.s: config/configuration.cpp.s
 
-.PHONY : configuration.s
+.PHONY : config/configuration.s
 
 # target to generate assembly for a file
-configuration.cpp.s:
-	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/configuration.cpp.s
-.PHONY : configuration.cpp.s
+config/configuration.cpp.s:
+	$(MAKE) -f CMakeFiles/warships.dir/build.make CMakeFiles/warships.dir/config/configuration.cpp.s
+.PHONY : config/configuration.cpp.s
 
 main.o: main.cpp.o
 
@@ -270,9 +270,9 @@ help:
 	@echo "... board/board.o"
 	@echo "... board/board.i"
 	@echo "... board/board.s"
-	@echo "... configuration.o"
-	@echo "... configuration.i"
-	@echo "... configuration.s"
+	@echo "... config/configuration.o"
+	@echo "... config/configuration.i"
+	@echo "... config/configuration.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
