@@ -143,9 +143,11 @@ void player::autoplace(ship &s) {
     int randDir = rand() % 2 + 1;
 
     while (!isValid) {
+//        std::cout << "HEIGHT ? WIDTH : " << shipsBoard.getWidth() << " ? " << shipsBoard.getHeight() << std::endl;
         randCoord = utils::generateRandomCoordinates(shipsBoard.getWidth(), shipsBoard.getHeight());
         isValid = shipsBoard.validatePlacement(s, randCoord, randDir);
         count++;
+        std::cout << "RANDOM COORD  : " << randCoord << std::endl;
         // Handle out of bounds exception.
 //        if (count >= 10000) {
 //            std::cout << "Failed to autoplace ships. Please reduce number of ships or increase grid dimensions and restart game." <<std::endl;

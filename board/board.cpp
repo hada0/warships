@@ -58,12 +58,21 @@ void board::displayBoard(std::string title) {
     headers << "_  ";
     int numOfColumns = getWidth();
 
-    for (int column = 0; column < numOfColumns; column++) {
-        int count = 0;
-        if (count == (numOfColumns - 1)) {
-            headers << headerAlphas.at(column);
+    // Handle the headers separately to deal with double values i.e. AA, AB, AC...
+    if (numOfColumns > 26) {
+        headers << std::string(52, ' ');
+        for (int i = 26; i < numOfColumns; i++) {
+            headers << headerAlphas.at(i).at(0);
+            headers << " ";
+        }
+        headers << std::endl;
+        headers << "_  ";
+    }
+    for (int i = 0; i < numOfColumns; i ++) {
+        if (i < 26) {
+            headers << headerAlphas.at(i) << " ";
         } else {
-            headers << headerAlphas.at(column) << " ";
+            headers << headerAlphas.at(i).at(1) << " ";
         }
     }
 

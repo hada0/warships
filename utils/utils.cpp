@@ -7,6 +7,7 @@
 #include <regex>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <random>
 #include "utils.h"
 
 void utils::clearBuffer() {
@@ -50,6 +51,7 @@ std::vector<int> utils::parseCoordinates(std::string str) {
         y = std::stoi(match.str(2)) - 1;
     }
     items.push_back(x);
+    std::cout << "X:" << x << std::endl;
     items.push_back(y);
     return items;
 }
@@ -107,11 +109,20 @@ std::vector<std::string> utils::getCoordinatesList(int shipLength, std::string c
 
 std::string utils::generateRandomCoordinates(int xLimit, int yLimit) {
     srand(time(NULL));
-    std::string randX = headerAlphas.at(rand() % xLimit);
-    int randY = rand() % yLimit;
+    std::string randX = headerAlphas.at(randomBetween19937(0, xLimit));
+    int randY = randomBetween19937(0, yLimit);
+    std::cout << "RAND Y." << randY << std::endl;
 
     return randX + std::to_string(randY);
 
+}
+
+int utils::randomBetween19937(int low, int high) {
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist6(low, high);
+
+    return dist6(rng);
 }
 
 bool utils::validateDimensions(std::string str) {

@@ -33,4 +33,5 @@ public:
     // Returns a list of coordinates that will be occupied with the given ship.
     static std::vector<std::string> getCoordinatesList(int shipLength, std::string coordinates, int direction);
     static std::string generateRandomCoordinates(int xLimit, int yLimit);
+    static int randomBetween19937(int low, int high);
 };
