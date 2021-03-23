@@ -5,17 +5,10 @@
 #include <string>
 #include <iostream>
 #include <regex>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdlib.h>
+#include <time.h>
 #include <random>
 #include "utils.h"
-
-void utils::clearBuffer() {
-    std::cin.clear();
-    // Clears the std::cin state to ensure future IO ops work correctly
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-    // Clears the cin buffer including new lines or additional characters
-}
 
 void utils::clearConsole() {
     std::cout << "\x1B[2J\x1B[H";
@@ -23,7 +16,7 @@ void utils::clearConsole() {
 
 std::string utils::coordinatesToUpper(std::string coordinatesStr) {
     std::string str;
-    for( char& c : coordinatesStr ) str.push_back(std::toupper(c));
+    for(char& c : coordinatesStr) str.push_back(std::toupper(c));
     return str;
 }
 
@@ -60,6 +53,8 @@ std::vector<int> utils::parseDimensions(std::string str) {
     std::vector<int> items;
     int x, y;
     std::smatch match;
+
+    // Retrieve the matched regex values.
     bool thing = std::regex_search(str, match, boardDimensions);
     if (std::regex_search(str, match, boardDimensions)) {
         x = std::stoi(match.str(1));
@@ -111,13 +106,11 @@ int utils::randomBetween19937(int low, int high) {
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist6(low, high);
-
     return dist6(rng);
 }
 
 bool utils::validateDimensions(std::string str) {
     return std::regex_match(str, boardDimensions);
-
 }
 
 bool utils::validateMaxShipsOnBoard(int boardArea, int totalShipsArea) {
