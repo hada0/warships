@@ -114,7 +114,8 @@ int main() {
 
     ////////////////////////////////////////////////////// GAME START /////////////////////////////////////////////////////
             playerOneTurn:
-                std::cout << "It's your turn. Enter coordinates to target, enter A to autofire or enter Q to quit the game."
+            std::cout << "*********************************** P L A Y E R  1 ***********************************" << std::endl;
+            std::cout << "It's your turn. Enter coordinates to target, enter A to autofire or enter Q to quit the game."
                           << std::endl;
                 std::cin >> targetCoordinates;
                 targetCoordinates = utils::coordinatesToUpper(targetCoordinates);
@@ -148,6 +149,7 @@ int main() {
                 }
 
             ComputerTurn:
+                std::cout << "*********************************** C O M P U T E R ***********************************" << std::endl;
                 std::cout << "It's Computer's turn." << std::endl;
                 do {
                     targetCoordinates = utils::generateRandomCoordinates(p2.getShipsBoard()->getWidth(),
@@ -158,6 +160,14 @@ int main() {
 
                 if (p2.remainingOpponentShips == 0) {
                     victor = "COMPUTER";
+                    goto endGame;
+                }
+
+            endComputerTurn:
+                std::cout << "Enter X to end COMPUTER turn." << std::endl;
+                std::cin >> endTurn;
+                if (!(endTurn == "X" || endTurn == "x")) {
+                    goto endComputerTurn;
                 } else {
                     goto playerOneTurn;
                 }
@@ -165,6 +175,7 @@ int main() {
             endGame:
                 std::cout << "GAME OVER." << std::endl;
                 std::cout << victor << " WINS." << std::endl;
+                return 0;
         case 2:
             std::cout << "GAME QUITTED.";
             return 0;

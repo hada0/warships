@@ -38,6 +38,7 @@ int utils::convertAlphaToInt(std::string alpha) {
     if (it != headerAlphas.end()) {
         value = it - headerAlphas.begin();
     }
+    std::cout << "VALUE : " << value << std::endl;
     return value;
 }
 
@@ -50,6 +51,13 @@ std::vector<int> utils::parseCoordinates(std::string str) {
         x = convertAlphaToInt(match.str(1));
         y = std::stoi(match.str(2)) - 1;
     }
+//    // Handle offset for x-values from AA.
+//    if (x > 25) {
+//        items.push_back(x);
+//    } else {
+//        items.push_back(x);
+//    }
+
     items.push_back(x);
     std::cout << "X:" << x << std::endl;
     items.push_back(y);

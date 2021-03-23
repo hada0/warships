@@ -43,15 +43,12 @@ int configuration::getWidth() const {
 void configuration::parseConfig(std::string fileName) {
 
     std::regex iniFormat =std::regex("([^\\s]+)[ ]?=\\s?(.*[^=])");
-    std::cout << "are you stuck???";
     std::ifstream configFile;
     configFile.open(fileName, std::ifstream::in);
     std::string line;
-    std::cout << "ARE YOU OPEN ?? " << configFile.is_open() << std::endl;
 
     while (!configFile.eof()) {
         getline(configFile, line);
-        std::cout << "LINE: " << line << std::endl;
 
         // Ignore line if it is a new line.
         if (line.empty()) {
@@ -67,19 +64,15 @@ void configuration::parseConfig(std::string fileName) {
             std::string key = match.str(1);
             std::string value = match.str(2);
             iniContents.insert(std::pair<std::string, std::string>{key, value});
-            std::cout << "KEY: " << key << std::endl;
-            std::cout << "VAL: " << value << std::endl;
         } else {
             std::cout << "Error in parsing configuration file. Please check it complies with format instructions.";
             exit(EXIT_FAILURE);
         }
     }
     configFile.close();
-    std::cout << "are you stuck???";
 }
 
 void configuration::setupGameConfig() {
-    std::cout << "HEY DID U GET TO HERE???.";
     std::string b = iniContents.at("Board");
     if (!utils::validateDimensions(b)) {
         std::cout << "Error in parsing board dimensions. Please check it complies with format instructions.";

@@ -149,10 +149,10 @@ void player::autoplace(ship &s) {
         count++;
         std::cout << "RANDOM COORD  : " << randCoord << std::endl;
         // Handle out of bounds exception.
-//        if (count >= 10000) {
-//            std::cout << "Failed to autoplace ships. Please reduce number of ships or increase grid dimensions and restart game." <<std::endl;
-//            exit(EXIT_FAILURE);
-//        }
+        if (count >= 10000) {
+            std::cout << "Failed to autoplace ships. Please reduce number of ships or increase grid dimensions and restart game." <<std::endl;
+            exit(EXIT_FAILURE);
+        }
     }
     std::vector<std::string> listOfCoordinates = utils::getCoordinatesList(s.length, randCoord, randDir);
     for (std::string c : listOfCoordinates) {
