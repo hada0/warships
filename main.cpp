@@ -6,36 +6,27 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-
-//    configuration gameConfig = configuration();
-//    gameConfig.parse_config("gameConfig.ini");
-//    gameConfig.defaultConfig();
-//    mINI::INIStructure setup = hey::readIni();
-    std::cout << "hey there" << std::endl;
-
+////////////////////////////////////////////////////// CONFIG SETUP /////////////////////////////////////////////////////
     configuration config;
-    std::cout << "hey there" << std::endl;
-
     config.parseConfig("gameConfig.ini");
     config.setupGameConfig();
     int gameMode;
-    std::cout << "Welcome. Select a battleship mode:" << std::endl;
-    std::cout << "1) Player vs. Computer" << std::endl;
-    std::cout << "2) Quit game." << std::endl;
-
-    std::cin >> gameMode;
-
-    player p1(config);
-    player p2(config);
-    p1.setup();
-    p2.setup();
-
     std::string inputCoordinates;
     int inputDirection;
     std::string playerConfirmation;
     std::string targetCoordinates;
     std::string victor;
     std::string endTurn;
+
+    player p1(config);
+    player p2(config);
+    p1.setup();
+    p2.setup();
+
+    std::cout << "Welcome. Select a battleship mode:" << std::endl;
+    std::cout << "1) Player vs. Computer" << std::endl;
+    std::cout << "2) Quit game." << std::endl;
+    std::cin >> gameMode;
 
     switch(gameMode) {
         case 1:

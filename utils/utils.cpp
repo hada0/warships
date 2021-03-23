@@ -45,21 +45,15 @@ int utils::convertAlphaToInt(std::string alpha) {
 std::vector<int> utils::parseCoordinates(std::string str) {
     std::string tmp;
     std::vector<int> items;
-    int x, y;
+    int x = 0, y = 0;
     std::smatch match;
     if (std::regex_search(str, match, coordinates)) {
+        std::cout << "X1:" << x << std::endl;
         x = convertAlphaToInt(match.str(1));
         y = std::stoi(match.str(2)) - 1;
     }
-//    // Handle offset for x-values from AA.
-//    if (x > 25) {
-//        items.push_back(x);
-//    } else {
-//        items.push_back(x);
-//    }
-
     items.push_back(x);
-    std::cout << "X:" << x << std::endl;
+    std::cout << "X2:" << x << std::endl;
     items.push_back(y);
     return items;
 }
@@ -71,9 +65,7 @@ std::vector<int> utils::parseDimensions(std::string str) {
     int x, y;
     std::smatch match;
     bool thing = std::regex_search(str, match, boardDimensions);
-    std::cout << "match:" << thing << std::endl;
     if (std::regex_search(str, match, boardDimensions)) {
-        std::cout << "x:" << match.str(1) << "\ny:" << match.str(2) << std::endl;
         x = std::stoi(match.str(1));
         y = std::stoi(match.str(2));
     }
@@ -118,8 +110,8 @@ std::vector<std::string> utils::getCoordinatesList(int shipLength, std::string c
 std::string utils::generateRandomCoordinates(int xLimit, int yLimit) {
     srand(time(NULL));
     std::string randX = headerAlphas.at(randomBetween19937(0, xLimit));
-    int randY = randomBetween19937(0, yLimit);
-    std::cout << "RAND Y." << randY << std::endl;
+    int randY = randomBetween19937(1, yLimit);
+//    std::cout << "RAND Y." << randY << std::endl;
 
     return randX + std::to_string(randY);
 

@@ -80,6 +80,10 @@ void configuration::setupGameConfig() {
     }
     width = utils::parseDimensions(b).at(0);
     height = utils::parseDimensions(b).at(1);
+    if (width < 5 || width > 80 || height < 5 || height > 80) {
+        std::cout << "Board dimensions out of range. Please check it complies with format instructions.";
+        exit(EXIT_FAILURE);
+    }
     carrierLength = std::stoi(iniContents.at("CarrierLength"));
     carrierQuantity = std::stoi(iniContents.at("CarrierQuantity"));
     battleshipLength = std::stoi(iniContents.at("BattleshipLength"));

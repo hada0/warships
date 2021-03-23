@@ -143,7 +143,6 @@ void player::autoplace(ship &s) {
     int randDir = rand() % 2 + 1;
 
     while (!isValid) {
-//        std::cout << "HEIGHT ? WIDTH : " << shipsBoard.getWidth() << " ? " << shipsBoard.getHeight() << std::endl;
         randCoord = utils::generateRandomCoordinates(shipsBoard.getWidth(), shipsBoard.getHeight());
         isValid = shipsBoard.validatePlacement(s, randCoord, randDir);
         count++;
