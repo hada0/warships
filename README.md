@@ -2,15 +2,10 @@ Ada Warships - by Hongann Dao
 ---
 ####Contents
  1. Challenge Outline
-    - Initial Design Solution (UML)
-    
+ 
  2. Development
  
  3. Evaluation
-    - Refactors, re-use, smells
-    - Advanced programming principles
-    - Embedded innovations
-    - Improvements
     
 #### 1. Challenge Outline
  
@@ -119,10 +114,11 @@ An open source library called `Tabulate` was used which set up borders according
 later iterations, the `displayBoard` method was updated to handle formatting of larger boards.
 
 ##### Phase 2 Development: Setup
-The next part of the implementation involved creating a configuration class that reads an .ini file. It was first attempted by importing an open source ini file
+The next part of the implementation involved creating a configuration class that reads an .ini file. It was first attempted by importing an open source .ini file
 parser but this was unsuccessful due to compatability issues with mac OS. Instead a default configuration setting was used in order to continue to implement and test
 the system. The `player` class was designed to take a configuration object as an argument in it's constructor. It's then able to set it's characteristics e.g. height
-and width for that player. During the set up, a target board and ship board is also created using the height and width in the configuration.
+and width for that player. During the set up, a target board and ship board is also created using the height and width in the configuration. Once an end-to-end flow was working,
+this stage was revisited to implement an .ini parser by using std::ifstream. 
 
 ##### Phase 3 Development: Player
 At this stage, the majority of the backbone had been set up. The actions that would change the state of the game all live in the `player` class. The player has attributes:
@@ -222,8 +218,10 @@ is almost identical to player 2 logic apart from the objects being called. There
 This would reduce the duplication of code.
 2) Refactor into a method e.g. `PlayerTurn(player player1, player opponent)` which would improve the readability of the `main.cpp` file. I definitely
 think it could be tidier with more abstraction.
+In hindsight, it would've been much more efficient and time-saving to start with an abstract class for player which could be used to implement 
+`COMPUTER` functionality as well as `PLAYER` functionality.
 
-A large portion of the time on this project was focused on displaying the graph and tables. As someone who values user experience,
+A significant portion of the time on this project was focused on displaying the graph and tables. As someone who values user experience,
 it was important to ensure the players had an aesthetic display that was easy to read and understand. The image below shows a player's 
 boards and ship library status.
 
@@ -237,4 +235,19 @@ is the Menu functionality.
 ![alt text](https://github.com/hada0/warships/blob/main/img/warships_menu.png "user menu snippet")
 
 The options here have been limited to single character entries to keep it as simple as possible and avoid human errors such as spelling.
-It also accepts both lowercase and uppercase values, again, to reduce the likelihood of human errors. 
+It also accepts both lowercase and uppercase values, again, to reduce the likelihood of human errors.
+
+There were many iterations that involved moving methods between classes, particularly between `player` and `board`. The aim of this was to 
+maximise cohesion and communication within each module. This was initially a very indecisive process as many methods depend on attributes of both `player` and `board`.
+
+Although low coupling is ideal, the relationship between `configuration` and `player` and `board` could be minimised. In this 
+version, `configuration` data is being passed to `board` through `player`. An alternative solution to this would be to create
+a singleton and use the instance in both `player` and `board` classes. Another negative noticed is using computation in `while` loops when
+defining the conditions. Generally this should be separated i.e. create a `bool` variable to represent a validation test to avoid potential infinite loops.
+
+There are still many improvements to be made within the code design. In summary, the key potential improvements would be:
+1) Use polymorphism to construct players instead of duplicating very similar code.
+2) 'Hiding' code in abstracted methods and helper functions to present a cleaner, more readable `main.cpp` file that will clearly indicate the code flow.
+3) Reducing coupling between classes.
+
+#### 1. Running in replit.
