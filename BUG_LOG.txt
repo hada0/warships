@@ -1,13 +1,13 @@
-The purpose of this README is to track the changes and decisions made during development of warships.
+The purpose of this BUGLOG is to track the bugs identified during development of warships.
 
-Update: Change the struct SHIP to a node struct which can also be a
-
-BUG - Sometimes out of range vector occurs when computer generates random coordinates. The rate at which coordinates
+[FIXED] BUG - Sometimes out of range vector occurs when computer generates random coordinates. The rate at which coordinates
 are found varies. If this happens, re-run the program.
 
-BUG - Replacement of ships: autoplace doesn't re-randomise.
+[FIXED] BUG - Replacement of ships: autoplace doesn't re-randomise.
 
-BUG - Flakiness in runs. Terminates with error: libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: vector.
+[FIXED] BUG - Flakiness in runs. Terminates with error: libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: vector.
 If this happens, re-run the program.
 
-BUG - Endless loop when asked to confirm ship placement.
+[FIXED] BUG - Endless loop when asked to confirm ship placement and entry is an invalid character.
+
+[FIXED] BUG

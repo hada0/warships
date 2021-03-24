@@ -42,7 +42,10 @@ Ada Warships - by Hongann Dao
  The design initially started by breaking it down into 3 epics: the board, the players and the game setup. These would need
  to communicate with one other using the C++ pointers and references, which also meant there is a reduction code
  duplication. In addition to this, each ship was planned to be hardcoded in a map that would represent the ship types
- mapped to their characteristics. This would provide access to the ships. 
+ mapped to their characteristics. This would provide access to the ships. A UML diagram is shown below with demonstrating
+ each class' dependencies.
+ 
+ ![alt text](https://github.com/hada0/warships/blob/main/img/uml.png "abstract uml")
  
  The project was decomposed into the following steps:
  1) Define the key components of the game: board, player, setup, ship structure.
@@ -160,7 +163,8 @@ the library.
 
 ##### Phase 4 Development: End to End Testing
 As previously mentioned, the each method built was unit tested and as the program expanded, integration tests were often carried out
-with different pathways and walkthroughs. It was during these times, many bugs presented themselves, and edge cases that were not yet accounted for.
+with different pathways and walkthroughs. It was during these times, many bugs presented themselves, and edge cases that were not yet accounted for. These were all logged in a `BUGLOG.txt`
+to make sure they were addressed if not at the moment.
 For the first mode of the game (Player vs Computer)
 I first implement one player menu, validation and game process. Once that was working successfully and as intended, similar logic was set in place for the computer and further on, similarly 
 for the two player game.
@@ -221,3 +225,8 @@ it was important to ensure the players had an aesthetic display that was easy to
 methods and helper methods throughout the code was written with the user in mind - questions such as "Will the user understand the purpose of this method
 without having to delve into the lower levels of abstraction?" and "Is this simplified as much as possible for the user to use easily?". A simple example of this
 is the Menu functionality.
+
+![alt text](https://github.com/hada0/warships/blob/main/img/warships_menu.png "user menu snippet")
+
+The options here have been limited to single character entries to keep it as simple as possible and avoid human errors such as spelling.
+As mentioned before the 
