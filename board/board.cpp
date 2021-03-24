@@ -9,7 +9,6 @@
 #include "../player/player.h"
 #include <iostream>
 #include "board.h"
-#include "../mini/ini.h"
 #include "../utils/utils.h"
 
 board::board(int height, int width) : height(height), width(width) {}

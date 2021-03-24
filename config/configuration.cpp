@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iomanip>
 #include "configuration.h"
-#include "../mini/ini.h"
 #include "../utils/utils.h"
 #include "../board/board.h"
 

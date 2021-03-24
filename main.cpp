@@ -2,7 +2,6 @@
 #include "config/configuration.h"
 #include "player/player.h"
 #include "utils/utils.h"
-#include "mini/ini.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -393,7 +392,6 @@ int main() {
             std::cout << "GAME QUITTED.";
             return 0;
     }
-
     std::cout << "Bye, World!" << std::endl;
     return 0;
 }
