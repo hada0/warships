@@ -6,6 +6,8 @@ Ada Warships - by Hongann Dao
  2. Development
  
  3. Evaluation
+ 
+ 4. Running in Replit
     
 #### 1. Challenge Outline
  
@@ -110,7 +112,7 @@ compatibility with switch cases. However this was quickly replaced with another 
 such as the length of the ship.
 
 Multiple helper methods are also included here e.g. `getNodeStateAtCoordinates` and `printCellValue`. A big challenge of this part was formatting the grid to display.
-An open source library called `Tabulate` was used which set up borders according to the size of the grid. This made the graph much easier read. In
+An open source library called [Tabulate](https://github.com/p-ranav/tabulate) was used which set up borders according to the size of the grid. This made the graph much easier read. In
 later iterations, the `displayBoard` method was updated to handle formatting of larger boards.
 
 ##### Phase 2 Development: Setup
