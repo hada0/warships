@@ -5,4 +5,5 @@ echo "$(tput setaf 1)-- Running CMake build gen";
 echo "-- Initial builds take a while - especially on Repl.it$(tput sgr 0)";
 cmake -D CMAKE_BUILD_TYPE=Debug -G Ninja $source && cmake --build .
 echo "$(tput setaf 1)-- Executing binary$(tput sgr 0)"
-cd $source && ./battleships
+cd $source && ./warships
+"""
