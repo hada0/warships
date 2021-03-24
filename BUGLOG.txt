@@ -10,4 +10,6 @@ If this happens, re-run the program.
 
 [FIXED] BUG - Endless loop when asked to confirm ship placement and entry is an invalid character.
 
-[FIXED] BUG
+[FIXED] BUG - Ship library not updating the coordinates for each ship.
+
+[FIXED] BUG - Coordinates list for each ship not being stored.

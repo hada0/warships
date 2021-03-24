@@ -221,7 +221,12 @@ This would reduce the duplication of code.
 think it could be tidier with more abstraction.
 
 A large portion of the time on this project was focused on displaying the graph and tables. As someone who values user experience,
-it was important to ensure the players had an aesthetic display that was easy to read and understand. This is not only true for the display,
+it was important to ensure the players had an aesthetic display that was easy to read and understand. The image below shows a player's 
+boards and ship library status.
+
+![alt text](https://github.com/hada0/warships/blob/main/img/player_boards.png "player boards")
+
+This is not only true for the display,
 methods and helper methods throughout the code was written with the user in mind - questions such as "Will the user understand the purpose of this method
 without having to delve into the lower levels of abstraction?" and "Is this simplified as much as possible for the user to use easily?". A simple example of this
 is the Menu functionality.
@@ -229,4 +234,4 @@ is the Menu functionality.
 ![alt text](https://github.com/hada0/warships/blob/main/img/warships_menu.png "user menu snippet")
 
 The options here have been limited to single character entries to keep it as simple as possible and avoid human errors such as spelling.
-As mentioned before the 
+It also accepts both lowercase and uppercase values, again, to reduce the likelihood of human errors. 
