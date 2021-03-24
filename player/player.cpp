@@ -11,6 +11,17 @@
 
 using Row_t = std::vector<std::variant<std::string, const char *, tabulate::Table>>;
 
+player::player(configuration config) : config(std::move(config)) {}
+
+board *player::getShipsBoard() {
+    return &shipsBoard;
+}
+
+void player::resetShipsboard() {
+    shipsBoard = board(config.getHeight(), config.getWidth());
+    shipsBoard.createBoard();
+}
+
 void player::setup() {
     targetBoard.createBoard();
     shipsBoard.createBoard();
@@ -37,26 +48,10 @@ void player::displayPlayerBoards(std::string playerName) {
     displayLib();
 }
 
-player::player(configuration config) : config(std::move(config)) {}
-
-board *player::getTargetBoard() {
-    return &targetBoard;
-}
-
-board *player::getShipsBoard() {
-    return &shipsBoard;
-}
-
-void player::resetShipsboard() {
-    shipsBoard = board(config.getHeight(), config.getWidth());
-    shipsBoard.createBoard();
-}
-
-void player::autoplaceRemaining() {
-    for (ship &s : shipLibrary) {
-        if (s.state) {continue;}
-        autoplace(s);
-        s.state = true;
+void player::addCoordinatesListToShipLibrary(ship &s, std::string headCoordinates, int direction) {
+    std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, headCoordinates, direction);
+    for (std::string c : coordinatesList) {
+        s.coordinates.push_back(c);
     }
 }
 
@@ -126,24 +121,18 @@ void player::autoFire(board &opponentShipBoard, std::vector<ship> &opponentShipL
     fire(opponentShipBoard, opponentShipLibrary, targetCoordinates);
 }
 
-void player::addCoordinatesListToShipLibrary(ship &s, std::string headCoordinates, int direction) {
-    std::vector<std::string> coordinatesList = utils::getCoordinatesList(s.length, headCoordinates, direction);
-    for (std::string c : coordinatesList) {
-        s.coordinates.push_back(c);
-    }
-}
-
 void player::autoplace(ship &s) {
     bool isValid;
-    int count = 0;
     std::string randCoord;
+    int count = 0;
     int randDir = rand() % 2 + 1;
 
     while (!isValid) {
         randCoord = utils::generateRandomCoordinates(shipsBoard.getWidth(), shipsBoard.getHeight());
         isValid = shipsBoard.validatePlacement(s, randCoord, randDir);
         count++;
-        // Handle out of bounds exception.
+        // Handle out of bounds exception. This may occur when autoplace is unable to place all the ships on the board
+        // within 10,000 tries.
         if (count >= 10000) {
             std::cout << "Failed to autoplace ships. Please reduce number of ships or increase grid dimensions and restart game." <<std::endl;
             exit(EXIT_FAILURE);
@@ -157,3 +146,10 @@ void player::autoplace(ship &s) {
     shipsBoard.placeNode(n, randCoord, randDir);
 }
 
+void player::autoplaceRemaining() {
+    for (ship &s : shipLibrary) {
+        if (s.state) {continue;}
+        autoplace(s);
+        s.state = true;
+    }
+}

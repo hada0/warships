@@ -24,7 +24,6 @@ private:
     int submarineQuantity;
     int patrolLength;
     int patrolQuantity;
-
     std::vector<ship> shipLibrary;
 
 public:
@@ -32,9 +31,14 @@ public:
     int getHeight() const;
     int getWidth() const;
     std::vector<ship> & getShipLibrary();
+
+    // Retrieve data from the configuration file and store in iniContents map.
     void parseConfig(std::string fileName);
+
+    // Populate the class attributes from iniContents. These will be used to set up the game.
     void setupGameConfig();
-    void defaultConfig();
+
+    // Construct the ship library based on length and quantity retrieved from the config file.
     void addToShipLibrary(std::string type, int length, int quantity);
 };
 

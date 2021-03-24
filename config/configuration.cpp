@@ -10,22 +10,6 @@
 #include "../utils/utils.h"
 #include "../board/board.h"
 
-void configuration::defaultConfig() {
-    height = 8;
-    width = 8;
-
-//    shipLibrary.emplace_back("CARRIER", 5);
-//    shipLibrary.emplace_back("CARRIER", 5);
-//    shipLibrary.emplace_back("BATTLESHIP", 4);
-//    shipLibrary.emplace_back("BATTLESHIP", 4);
-//    shipLibrary.emplace_back("DESTROYER", 3);
-    shipLibrary.emplace_back("DESTROYER", 3);
-//    shipLibrary.emplace_back("SUBMARINE", 3);
-//    shipLibrary.emplace_back("SUBMARINE", 3);
-//    shipLibrary.emplace_back("PATROL", 2);
-    shipLibrary.emplace_back("PATROL", 2);
-}
-
 configuration::configuration() = default;
 
 std::vector<ship> &configuration::getShipLibrary() {
@@ -84,6 +68,8 @@ void configuration::setupGameConfig() {
         std::cout << "Board dimensions out of range. Please check it complies with format instructions.";
         exit(EXIT_FAILURE);
     }
+
+    // Populate features with their respective values from the contents map.
     carrierLength = std::stoi(iniContents.at("CarrierLength"));
     carrierQuantity = std::stoi(iniContents.at("CarrierQuantity"));
     battleshipLength = std::stoi(iniContents.at("BattleshipLength"));
@@ -95,6 +81,7 @@ void configuration::setupGameConfig() {
     patrolLength = std::stoi(iniContents.at("PatrolLength"));
     patrolQuantity = std::stoi(iniContents.at("PatrolQuantity"));
 
+    // Ships and board combination validation.
     int totalShipArea =
             (carrierQuantity * carrierLength) +
             (battleshipQuantity * battleshipLength) +
@@ -102,12 +89,12 @@ void configuration::setupGameConfig() {
             (submarineQuantity * submarineLength) +
             (patrolQuantity * patrolQuantity);
     int boardArea = width * height;
-
     if (!utils::validateMaxShipsOnBoard(boardArea, totalShipArea)) {
         std::cout << "Ships defined do not fit on the board defined. Fix and restart the game.";
         exit(EXIT_FAILURE);
     }
 
+    // Populate ship library.
     addToShipLibrary("CARRIER", carrierLength, carrierQuantity);
     addToShipLibrary("BATTLESHIP", battleshipLength, battleshipQuantity);
     addToShipLibrary("DESTROYER", destroyerLength, destroyerQuantity);
