@@ -172,7 +172,10 @@ for the two player game.
 When first testing with larger boards, the alignment of the axis and header was offset significantly because of the values of the headers
 going from a single-letter and single-number types e.g. 'A6' and 'F4' to double-letters and double-digits e.g. 'AD2' and 'D16'. Through many iterations, 
 the correct padding was set for the y-axis. The alphabet headers provided a more difficult task because there had to be a way to write 'AD'
-in one space. The solution for this was to split the double-letter up and align them in a column so that both values only appeared in one space.
+in one space. The solution for this was to split the double-letter up and align them in a column so that both values only appeared in one space. See below
+for the result.
+
+ ![alt text](https://github.com/hada0/warships/blob/main/img/alpha_headers.png "headers on larger boards.")
 
  #### 3. Evaluation
  Although refactorings were made continuously throughout, `main.cpp` has a lot of duplicate code which could be condensed to
