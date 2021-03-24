@@ -95,9 +95,6 @@
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/main.cpp">
 			<Option target="warships"/>
 		</Unit>
-		<Unit filename="/Users/vuhongann/CLionProjects/warships/mini/ini.h">
-			<Option target="warships"/>
-		</Unit>
 		<Unit filename="/Users/vuhongann/CLionProjects/warships/player/player.cpp">
 			<Option target="warships"/>
 		</Unit>

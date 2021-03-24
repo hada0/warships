@@ -250,4 +250,24 @@ There are still many improvements to be made within the code design. In summary,
 2) 'Hiding' code in abstracted methods and helper functions to present a cleaner, more readable `main.cpp` file that will clearly indicate the code flow.
 3) Reducing coupling between classes.
 
-#### 1. Running in replit.
+#### 4. Running in replit.
+When pulling the github repo in repl.it, it may get stuck in ***Detecting Language*** stage. This can happen with larger repos. 
+See image below.
+
+![alt text](https://github.com/hada0/warships/blob/main/img/replit.png "replit loop")
+
+If this happens
+- reload the page
+- replace the text in your `.replit` file with the following
+```
+language = "bash"
+run = """
+clear && source=$(pwd) &&mkdir -p ../build && cd ../build
+echo "$(tput setaf 1)-- Running CMake build gen";
+echo "-- Initial builds take a while - especially on Repl.it$(tput sgr 0)";
+cmake -D CMAKE_BUILD_TYPE=Debug -G Ninja $source && cmake --build .
+echo "$(tput setaf 1)-- Executing binary$(tput sgr 0)"
+cd $source && ./warships
+"""
+```
+- run the program again.
