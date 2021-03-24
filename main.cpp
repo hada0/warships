@@ -391,6 +391,10 @@ int main() {
         case 3:
             std::cout << "GAME QUITTED.";
             return 0;
+
+        default:
+            std::cout << "You entered an invalid option. \nQuitting Game.";
+            return 0;
     }
     std::cout << "Bye, World!" << std::endl;
     return 0;
